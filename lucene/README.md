@@ -16,6 +16,7 @@ Lab Goals:
   https://github.com/DmitryKey/luke/releases/   
 
   Copy the index from your Solr install
+  (or use a provided one)
 
 
 ### STEP 2) Run Luke and open the index
