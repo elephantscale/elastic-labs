@@ -14,11 +14,15 @@ Each student is provided their individual server and credentials
 
 (Instructor: use our ubuntu AMI, t2.large or t2.xlarge instances and Elasticsearch security group)
 
-### STEP 2: Verify the environment
+### STEP 2: Prepare the environment
 
 Verify that you have Java installed 
 
     java -version
+    
+Get the elastic-labs
+    
+    git clone git@github.com:elephantscale/elastic-labs.git    
 
 ### STEP 3: Download and install ES
 
