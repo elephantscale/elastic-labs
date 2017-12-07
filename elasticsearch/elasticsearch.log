@@ -1,0 +1,95 @@
+[2017-12-05T20:04:03,699][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-12-05T20:04:03,796][INFO ][o.e.e.NodeEnvironment    ] [gulBgf7] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [62.1gb], net total_space [98.2gb], types [ext4]
+[2017-12-05T20:04:03,796][INFO ][o.e.e.NodeEnvironment    ] [gulBgf7] heap size [1007.3mb], compressed ordinary object pointers [true]
+[2017-12-05T20:04:03,798][INFO ][o.e.n.Node               ] node name [gulBgf7] derived from node ID [gulBgf7NSYGqsO0oaM_fhg]; set [node.name] to override
+[2017-12-05T20:04:03,798][INFO ][o.e.n.Node               ] version[6.0.0], pid[26159], build[8f0685b/2017-11-10T18:41:22.859Z], OS[Linux/4.4.0-98-generic/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_77/25.77-b03]
+[2017-12-05T20:04:03,798][INFO ][o.e.n.Node               ] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/home/ubuntu/elasticsearch, -Des.path.conf=/home/ubuntu/elasticsearch/config]
+[2017-12-05T20:04:04,674][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [aggs-matrix-stats]
+[2017-12-05T20:04:04,675][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [analysis-common]
+[2017-12-05T20:04:04,675][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [ingest-common]
+[2017-12-05T20:04:04,675][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-expression]
+[2017-12-05T20:04:04,675][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-mustache]
+[2017-12-05T20:04:04,675][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-painless]
+[2017-12-05T20:04:04,675][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [parent-join]
+[2017-12-05T20:04:04,676][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [percolator]
+[2017-12-05T20:04:04,676][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [reindex]
+[2017-12-05T20:04:04,676][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [repository-url]
+[2017-12-05T20:04:04,676][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [transport-netty4]
+[2017-12-05T20:04:04,676][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [tribe]
+[2017-12-05T20:04:04,677][INFO ][o.e.p.PluginsService     ] [gulBgf7] no plugins loaded
+[2017-12-05T20:04:06,181][INFO ][o.e.d.DiscoveryModule    ] [gulBgf7] using discovery type [zen]
+[2017-12-05T20:04:06,677][INFO ][o.e.n.Node               ] initialized
+[2017-12-05T20:04:06,678][INFO ][o.e.n.Node               ] [gulBgf7] starting ...
+[2017-12-05T20:04:06,813][INFO ][o.e.t.TransportService   ] [gulBgf7] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2017-12-05T20:04:06,824][WARN ][o.e.b.BootstrapChecks    ] [gulBgf7] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2017-12-05T20:04:09,893][INFO ][o.e.c.s.MasterService    ] [gulBgf7] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{-RHSfFTPQHeBScVAZcKGnQ}{127.0.0.1}{127.0.0.1:9300}
+[2017-12-05T20:04:09,898][INFO ][o.e.c.s.ClusterApplierService] [gulBgf7] new_master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{-RHSfFTPQHeBScVAZcKGnQ}{127.0.0.1}{127.0.0.1:9300}, reason: apply cluster state (from master [master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{-RHSfFTPQHeBScVAZcKGnQ}{127.0.0.1}{127.0.0.1:9300} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2017-12-05T20:04:09,914][INFO ][o.e.h.n.Netty4HttpServerTransport] [gulBgf7] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2017-12-05T20:04:09,915][INFO ][o.e.n.Node               ] [gulBgf7] started
+[2017-12-05T20:04:09,924][INFO ][o.e.g.GatewayService     ] [gulBgf7] recovered [0] indices into cluster_state
+[2017-12-05T20:10:03,021][INFO ][o.e.n.Node               ] [gulBgf7] stopping ...
+[2017-12-05T20:10:03,035][INFO ][o.e.n.Node               ] [gulBgf7] stopped
+[2017-12-05T20:10:03,035][INFO ][o.e.n.Node               ] [gulBgf7] closing ...
+[2017-12-05T20:10:03,045][INFO ][o.e.n.Node               ] [gulBgf7] closed
+[2017-12-05T20:10:10,022][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-12-05T20:10:10,094][INFO ][o.e.e.NodeEnvironment    ] [gulBgf7] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [62.1gb], net total_space [98.2gb], types [ext4]
+[2017-12-05T20:10:10,094][INFO ][o.e.e.NodeEnvironment    ] [gulBgf7] heap size [1007.3mb], compressed ordinary object pointers [true]
+[2017-12-05T20:10:10,095][INFO ][o.e.n.Node               ] node name [gulBgf7] derived from node ID [gulBgf7NSYGqsO0oaM_fhg]; set [node.name] to override
+[2017-12-05T20:10:10,095][INFO ][o.e.n.Node               ] version[6.0.0], pid[26660], build[8f0685b/2017-11-10T18:41:22.859Z], OS[Linux/4.4.0-98-generic/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_77/25.77-b03]
+[2017-12-05T20:10:10,096][INFO ][o.e.n.Node               ] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/home/ubuntu/elasticsearch, -Des.path.conf=/home/ubuntu/elasticsearch/config]
+[2017-12-05T20:10:10,853][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [aggs-matrix-stats]
+[2017-12-05T20:10:10,853][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [analysis-common]
+[2017-12-05T20:10:10,853][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [ingest-common]
+[2017-12-05T20:10:10,854][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-expression]
+[2017-12-05T20:10:10,854][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-mustache]
+[2017-12-05T20:10:10,854][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-painless]
+[2017-12-05T20:10:10,854][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [parent-join]
+[2017-12-05T20:10:10,854][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [percolator]
+[2017-12-05T20:10:10,854][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [reindex]
+[2017-12-05T20:10:10,854][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [repository-url]
+[2017-12-05T20:10:10,855][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [transport-netty4]
+[2017-12-05T20:10:10,855][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [tribe]
+[2017-12-05T20:10:10,855][INFO ][o.e.p.PluginsService     ] [gulBgf7] no plugins loaded
+[2017-12-05T20:10:12,474][INFO ][o.e.d.DiscoveryModule    ] [gulBgf7] using discovery type [zen]
+[2017-12-05T20:10:12,879][INFO ][o.e.n.Node               ] initialized
+[2017-12-05T20:10:12,880][INFO ][o.e.n.Node               ] [gulBgf7] starting ...
+[2017-12-05T20:10:13,046][INFO ][o.e.t.TransportService   ] [gulBgf7] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2017-12-05T20:10:13,063][WARN ][o.e.b.BootstrapChecks    ] [gulBgf7] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2017-12-05T20:10:16,107][INFO ][o.e.c.s.MasterService    ] [gulBgf7] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{2Rvw2SXISC6Y55rmWrozsw}{127.0.0.1}{127.0.0.1:9300}
+[2017-12-05T20:10:16,111][INFO ][o.e.c.s.ClusterApplierService] [gulBgf7] new_master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{2Rvw2SXISC6Y55rmWrozsw}{127.0.0.1}{127.0.0.1:9300}, reason: apply cluster state (from master [master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{2Rvw2SXISC6Y55rmWrozsw}{127.0.0.1}{127.0.0.1:9300} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2017-12-05T20:10:16,132][INFO ][o.e.g.GatewayService     ] [gulBgf7] recovered [0] indices into cluster_state
+[2017-12-05T20:10:16,136][INFO ][o.e.h.n.Netty4HttpServerTransport] [gulBgf7] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2017-12-05T20:10:16,137][INFO ][o.e.n.Node               ] [gulBgf7] started
+[2017-12-05T20:27:56,626][INFO ][o.e.n.Node               ] [gulBgf7] stopping ...
+[2017-12-05T20:27:56,649][INFO ][o.e.n.Node               ] [gulBgf7] stopped
+[2017-12-05T20:27:56,650][INFO ][o.e.n.Node               ] [gulBgf7] closing ...
+[2017-12-05T20:27:56,657][INFO ][o.e.n.Node               ] [gulBgf7] closed
+[2017-12-05T20:28:20,239][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-12-05T20:28:20,320][INFO ][o.e.e.NodeEnvironment    ] [gulBgf7] using [1] data paths, mounts [[/ (/dev/xvda1)]], net usable_space [62.1gb], net total_space [98.2gb], types [ext4]
+[2017-12-05T20:28:20,320][INFO ][o.e.e.NodeEnvironment    ] [gulBgf7] heap size [1007.3mb], compressed ordinary object pointers [true]
+[2017-12-05T20:28:20,321][INFO ][o.e.n.Node               ] node name [gulBgf7] derived from node ID [gulBgf7NSYGqsO0oaM_fhg]; set [node.name] to override
+[2017-12-05T20:28:20,322][INFO ][o.e.n.Node               ] version[6.0.0], pid[27573], build[8f0685b/2017-11-10T18:41:22.859Z], OS[Linux/4.4.0-98-generic/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_77/25.77-b03]
+[2017-12-05T20:28:20,322][INFO ][o.e.n.Node               ] JVM arguments [-Xms1g, -Xmx1g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -XX:-OmitStackTraceInFastThrow, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/home/ubuntu/elasticsearch, -Des.path.conf=/home/ubuntu/elasticsearch/config]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [aggs-matrix-stats]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [analysis-common]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [ingest-common]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-expression]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-mustache]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [lang-painless]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [parent-join]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [percolator]
+[2017-12-05T20:28:21,136][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [reindex]
+[2017-12-05T20:28:21,137][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [repository-url]
+[2017-12-05T20:28:21,137][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [transport-netty4]
+[2017-12-05T20:28:21,137][INFO ][o.e.p.PluginsService     ] [gulBgf7] loaded module [tribe]
+[2017-12-05T20:28:21,137][INFO ][o.e.p.PluginsService     ] [gulBgf7] no plugins loaded
+[2017-12-05T20:28:22,908][INFO ][o.e.d.DiscoveryModule    ] [gulBgf7] using discovery type [zen]
+[2017-12-05T20:28:23,459][INFO ][o.e.n.Node               ] initialized
+[2017-12-05T20:28:23,459][INFO ][o.e.n.Node               ] [gulBgf7] starting ...
+[2017-12-05T20:28:23,585][INFO ][o.e.t.TransportService   ] [gulBgf7] publish_address {127.0.0.1:9300}, bound_addresses {[::1]:9300}, {127.0.0.1:9300}
+[2017-12-05T20:28:23,599][WARN ][o.e.b.BootstrapChecks    ] [gulBgf7] max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
+[2017-12-05T20:28:26,659][INFO ][o.e.c.s.MasterService    ] [gulBgf7] zen-disco-elected-as-master ([0] nodes joined), reason: new_master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{p844Qw9YR1CkK1WsQxtAqQ}{127.0.0.1}{127.0.0.1:9300}
+[2017-12-05T20:28:26,663][INFO ][o.e.c.s.ClusterApplierService] [gulBgf7] new_master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{p844Qw9YR1CkK1WsQxtAqQ}{127.0.0.1}{127.0.0.1:9300}, reason: apply cluster state (from master [master {gulBgf7}{gulBgf7NSYGqsO0oaM_fhg}{p844Qw9YR1CkK1WsQxtAqQ}{127.0.0.1}{127.0.0.1:9300} committed version [1] source [zen-disco-elected-as-master ([0] nodes joined)]])
+[2017-12-05T20:28:26,686][INFO ][o.e.h.n.Netty4HttpServerTransport] [gulBgf7] publish_address {127.0.0.1:9200}, bound_addresses {[::1]:9200}, {127.0.0.1:9200}
+[2017-12-05T20:28:26,686][INFO ][o.e.n.Node               ] [gulBgf7] started
+[2017-12-05T20:28:26,689][INFO ][o.e.g.GatewayService     ] [gulBgf7] recovered [0] indices into cluster_state
