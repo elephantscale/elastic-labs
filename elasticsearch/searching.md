@@ -17,11 +17,11 @@ Lab Goals:
 * Find documents containing “elasticsearch”
 * Return only the name and location fields for the top result.
  
-    curl "localhost:9200/get-together/group/_search?\
-    q=elasticsearch\
-    &stored_fields=name,location\
-    &size=1\
-    &pretty"
+curl "localhost:9200/get-together/group/_search?\
+q=elasticsearch\
+&stored_fields=name,location\
+&size=1\
+&pretty"
 
 ### STEP 3: Search in multiple types
 
@@ -33,4 +33,17 @@ Lab Goals:
     curl 'localhost:9200/get-together/_search?q=sample&pretty'
     
     curl 'localhost:9200/get-together/_search?&pretty'
+    
+### STEP 5: Search in multiple indices
+
+Will the search below fail?    
+    
+    curl "localhost:9200/get-together,other-index/_search\
+    ?q=elasticsearch&pretty"
+    
+Can you fix it?
+
+(Hint) Use `ignore_unavailable`
+
+curl "localhost:9200/get-together,other-index/_search\?q=elasticsearch&pretty&ignore_unavailable"
     
