@@ -1,11 +1,11 @@
 # ES install
 
-In this lab we will practice the installation of the Elasticsearch server.
+In this lab we will practice the installation of Kibana.
 
 
 Lab Goals:
 
-* Install Elasticsearch and verify its operation
+* Install Solr and verify its operation
 * Prepare to use this install for all subsequent labs
 
 ### STEP 1: Login to the server
