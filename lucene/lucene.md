@@ -10,7 +10,7 @@ Lab Goals:
 
     wget https://s3.amazonaws.com/elephantscale-public/downloads/lucene-7.1.0.zip
     unzip lucene-7.1.0.zip
-    lucene-7.1.0 lucene
+    mv lucene-7.1.0 lucene
     
 ### STEP 2: Prepare to run Lucene programs
 
