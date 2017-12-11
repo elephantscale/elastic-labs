@@ -14,6 +14,8 @@ Lab Goals:
     
 ### STEP 2: Prepare to run Lucene programs
 
+git clone git@github.com:elephantscale/elastic-labs.git
+
 Analyze the file `elastic-labs/lucene/lucene_env.sh`    
     
 Be ready to answer the question, "What does the CLASSPATH accomplish"
