@@ -145,3 +145,14 @@ The accounts data set doesn’t require any mappings, so at this point we’re r
     curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @logs.jsonl
     
     curl -XGET 'localhost:9200/_cat/indices?v&pretty'
+
+You will see something like this
+
+    health status index               uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+    yellow open   myindex             p_Edeq_aQSyPo7aSqjcPzw   5   1          0            0       810b           810b
+    yellow open   logstash-2015.05.20 ZxafTWXjQHaGuY9D7b_7QA   2   1       9500            0       53mb           53mb
+    yellow open   bank                xhirEiTJSNOeND623FKOfA   5   1       1000            0    640.3kb        640.3kb
+    yellow open   shakespeare         i8eMu6dNROCVKhk3eJ8h8g   5   1     111396            0     28.6mb         28.6mb
+    yellow open   logstash-2015.05.19 lHmZIurjSamU74yC6m0u2A   2   1       9248            0     51.9mb         51.9mb
+    yellow open   get-together        Mc3HobI5S2y2P9WOrdD-MA   5   1          5            0     33.4kb         33.4kb
+    yellow open   logstash-2015.05.18 MZOT_XVcQ12dgcsbh6Cd0A   2   1       9262            0     52.3mb         52.3mb
