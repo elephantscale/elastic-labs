@@ -52,3 +52,12 @@ Each student is provided their individual server and credentials
     RDD.first
     RDD.collect
     RDD.foreach(println)
+
+### STEP 8: Verify the index in elasticsearch
+
+Leave the spark shell. CTRL-d or :q will do it for you.
+
+Now list this index in Elasticsearch
+
+curl 'localhost:9200/spark/_search?&pretty'
+
