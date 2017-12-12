@@ -79,3 +79,69 @@ This mapping specifies the following qualities for the data set:
 
 Because the speaker and play_name fields are keyword fields, they are not analyzed. The strings are treated as a single unit even if they contain multiple words.
 The line_id and speech_number fields are integers.
+
+The logs data set requires a mapping to label the latitude/longitude pairs in the logs as geographic locations by applying the geo_point type to those fields.
+
+Use the following commands to establish geo_point mapping for the logs:
+
+    curl -XPUT 'localhost:9200/logstash-2015.05.18?pretty' -H 'Content-Type: application/json' -d'
+    {
+      "mappings": {
+        "log": {
+          "properties": {
+            "geo": {
+              "properties": {
+                "coordinates": {
+                  "type": "geo_point"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    '
+
+    curl -XPUT 'localhost:9200/logstash-2015.05.19?pretty' -H 'Content-Type: application/json' -d'
+    {
+      "mappings": {
+        "log": {
+          "properties": {
+            "geo": {
+              "properties": {
+                "coordinates": {
+                  "type": "geo_point"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    '
+
+    curl -XPUT 'localhost:9200/logstash-2015.05.20?pretty' -H 'Content-Type: application/json' -d'
+    {
+      "mappings": {
+        "log": {
+          "properties": {
+            "geo": {
+              "properties": {
+                "coordinates": {
+                  "type": "geo_point"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    '
+
+The accounts data set doesn’t require any mappings, so at this point we’re ready to use the Elasticsearch bulk API to load the data sets with the following commands:
+
+    curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/bank/account/_bulk?pretty' --data-binary @accounts.json
+    curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/shakespeare/doc/_bulk?pretty' --data-binary @shakespeare_6.0.json
+    curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @logs.jsonl
+    
+    curl -XGET 'localhost:9200/_cat/indices?v&pretty'
