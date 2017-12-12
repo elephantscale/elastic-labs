@@ -47,3 +47,7 @@ Can you fix it?
 
 curl "localhost:9200/get-together,other-index/_search\?q=elasticsearch&pretty&ignore_unavailable"
     
+### STEP 6: List all indices
+
+    curl -XGET 'localhost:9200/_cat/indices?v&pretty'
+
