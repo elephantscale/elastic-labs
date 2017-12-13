@@ -1,4 +1,4 @@
-# ES install
+# Kibana install
 
 In this lab we will practice the installation of Kibana.
 
