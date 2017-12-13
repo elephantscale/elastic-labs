@@ -27,7 +27,7 @@ Configuring Kibana via config fileedit
 Kibana loads its configuration from the $KIBANA_HOME/config/kibana.yml file by default. 
 The format of this config file is explained in [Configuring Kibana](https://www.elastic.co/guide/en/kibana/5.5/settings.html).
 
-### STEP 4: Accessing Kibanaedit
+### STEP 4: Accessing Kibana
 
 Kibana is a web application that you access through port 5601. All you need to do is point your web browser at the machine where Kibana is running and specify the port number. For example, localhost:5601
 
