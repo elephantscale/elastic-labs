@@ -1,0 +1,1 @@
+export CLASSPATH=/home/ubuntu/lucene/core/lucene-core-7.1.0.jar:/home/ubuntu/lucene/queryparser/lucene-queryparser-7.1.0.jar:/home/ubuntu/lucene/analysis/common/lucene-analyzers-common-7.1.0.jar:/home/ubuntu/lucene/demo/lucene-demo-7.1.0.jar

@@ -1,0 +1,40 @@
+
+
+{
+  "get-together" : {
+    "mappings" : {
+      "group" : {
+        "properties" : {
+          "created_on" : {
+            "type" : "date",
+            "format" : "yyyy-MM-dd"
+          },
+          "description" : {
+            "type" : "text",
+            "term_vector" : "with_positions_offsets"
+          },
+          "location_group" : {
+            "type" : "text"
+          },
+          "members" : {
+            "type" : "text"
+          },
+          "name" : {
+            "type" : "text"
+          },
+          "organizer" : {
+            "type" : "text"
+          },
+          "tags" : {
+            "type" : "text",
+            "fields" : {
+              "verbatim" : {
+                "type" : "keyword"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

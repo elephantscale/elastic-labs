@@ -1,0 +1,15 @@
+
+
+{
+  "_index" : "get-together",
+  "_type" : "group",
+  "_id" : "1",
+  "_version" : 2,
+  "result" : "updated",
+  "_shards" : {
+    "total" : 2,
+    "successful" : 1,
+    "failed" : 0
+  },
+  "created" : false
+}
