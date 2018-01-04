@@ -2,7 +2,7 @@
 
 Practice for more data with Spark with Elasticseearch.
 
-### STEP 1: Prepare the installs as in the install.md lab
+### STEP 1: Prepare the installs as in the ([install.md](install.md) lab
     
 ### STEP 2: Start Spark shell with elasticsearch library
 
