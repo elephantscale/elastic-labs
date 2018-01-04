@@ -1,6 +1,6 @@
 # Spark with Elasticssearch install
 
-In this lab we will be practicing with Elasticseearch.
+In this lab we will be practicing Spark with Elasticseearch.
 
 
 ### STEP 1: Login to the server
