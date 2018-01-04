@@ -1,4 +1,4 @@
-# Spark with Elasticssearch install
+# Spark with Elasticssearch intro
 
 In this lab we will be practicing Spark with Elasticseearch.
 
