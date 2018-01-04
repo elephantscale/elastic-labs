@@ -16,7 +16,7 @@ Each student is provided their individual server and credentials
     
 ### STEP 3: Prepare eleasticsearch-spark library
 
-    https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-hadoop-6.0.1.zip
+    wget https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-hadoop-6.0.1.zip
     unzip elasticsearch-hadoop-6.0.1.zip
     
 ### STEP 4: Start Spark shell with elasticsearch library
