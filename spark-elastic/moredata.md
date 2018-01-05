@@ -130,3 +130,24 @@ References
 2. [https://www.elastic.co/guide/en/elasticsearch/hadoop/master/spark.html](https://www.elastic.co/guide/en/elasticsearch/hadoop/master/spark.html)
 
 
+Scripting
+
+~/spark/bin/spark-shell --jars ~/elasticsearch-spark-20_2.11-6.0.1.jar -i load_script.scala
+
+    load_script.scala
+    
+    import org.apache.spark.sql.SQLContext
+    import org.apache.spark.sql.SQLContext._
+    import org.elasticsearch.spark.sql._
+    val sqlContext = new SQLContext(sc)
+    
+    case class Person(name: String, surname: String, age: Int)
+    
+    //  create DataFrame
+    val people = sc.textFile("people.txt").
+       map(_.split(",")).
+       map(p => Person(p(0), p(1), p(2).trim.toInt)).
+          toDF()
+       people.saveToEs("spark/people")
+       println("Done saving to elastic")
+    System.exit(0)
