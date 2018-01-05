@@ -22,6 +22,7 @@ Each student is provided their individual server and credentials
 ### STEP 4: Start Spark shell with elasticsearch library
 
     cp elasticsearch-hadoop-6.0.1/dist/elasticsearch-spark-20_2.11-6.0.1.jar ~
+    
     ~/spark/bin/spark-shell --jars elasticsearch-spark-20_2.11-6.0.1.jar
     
 ### STEP 5: Write to Elasticsearch from Spark
@@ -59,5 +60,5 @@ Leave the spark shell. CTRL-d or :q will do it for you.
 
 Now list this index in Elasticsearch
 
-curl 'localhost:9200/spark/_search?&pretty'
+curl 'localhost:9200/spark/_search?&pretty&size=50'
 
