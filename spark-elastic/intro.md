@@ -1,4 +1,4 @@
-# Spark with Elasticssearch intro
+# Spark with Elasticsearch intro
 
 In this lab we will be practicing Spark with Elasticseearch.
 

@@ -51,7 +51,7 @@ Read the data back from Elasticsearch (reading all data)
     
 ### STEP 6: Verify the index in elasticsearch
 
-Leave the spark shell. CTRL-d or :q will do it for you.
+Quit the spark shell. CTRL-d or :q will do it for you.
 
 Now list this index in Elasticsearch
 

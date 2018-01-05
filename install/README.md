@@ -22,10 +22,9 @@ Verify that you have Java installed
 
 ### STEP 3) Download and install ES
 
-    curl -L –O https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-5.5.3.zip
-    elasticsearch-2.3.3.tar.gz
-    tar -zxvf elasticsearch-2.3.3.tar.gz
-    cd elasticsearch-2.3.3
+    wget https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-5.5.3.zip
+        unzip elasticsearch-5.5.3.zip
+    cd elasticsearch-5.5.3
 
 ### STEP 4) Start ES
 
