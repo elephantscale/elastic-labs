@@ -2,12 +2,20 @@
 
 In this lab we will practice the configuration of Kibana.
 
-Pre-requisites: you will need the Kibana slides where the configuration and capabilities
+Pre-requisites:
+
+Make sure you have the datasets imported, as in this lab: [datasets/install.md](../datasets/install.md) 
+
+you will need the Kibana slides where the configuration and capabilities
 are illustrated with screenshots.
 
 ### STEP 1: Start Kibana as in the [install.md](install.md) lab 
 
-### STEP 2: Configuration
+### STEP 2: Get test data
+
+    wget https://s3.amazonaws.com/elephantscale-public/downloads/logstash-5.5.3.tar.gz
+    
+### STEP 3: Configuration
  
 1. Configure an index pattern
 

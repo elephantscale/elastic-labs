@@ -124,4 +124,9 @@ Now list this index in Elasticsearch
 
 curl 'localhost:9200/spark/_search?&pretty&size=1000'    
 
+References
+
+1. Read the code
+2. [https://www.elastic.co/guide/en/elasticsearch/hadoop/master/spark.html](https://www.elastic.co/guide/en/elasticsearch/hadoop/master/spark.html)
+
 
