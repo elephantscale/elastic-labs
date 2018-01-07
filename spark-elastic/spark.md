@@ -55,7 +55,7 @@ Each student is provided their individual server and credentials
 
 ### STEP 8: Verify the index in elasticsearch
 
-Leave the spark shell. CTRL-d or :q will do it for you.
+Exit the Spark shell. CTRL-d or :q will do it for you.
 
 Now list this index in Elasticsearch
 
