@@ -1,6 +1,6 @@
-# Spark with Elasticssearch install
+# Spark with Elasticsearch intro
 
-In this lab we will be practicing with Elasticseearch.
+In this lab we will be practicing Spark with Elasticseearch.
 
 
 ### STEP 1: Login to the server
@@ -16,12 +16,13 @@ Each student is provided their individual server and credentials
     
 ### STEP 3: Prepare eleasticsearch-spark library
 
-    https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-hadoop-6.0.1.zip
+    wget https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-hadoop-6.0.1.zip
     unzip elasticsearch-hadoop-6.0.1.zip
     
 ### STEP 4: Start Spark shell with elasticsearch library
 
     cp elasticsearch-hadoop-6.0.1/dist/elasticsearch-spark-20_2.11-6.0.1.jar ~
+    
     ~/spark/bin/spark-shell --jars elasticsearch-spark-20_2.11-6.0.1.jar
     
 ### STEP 5: Write to Elasticsearch from Spark
@@ -59,5 +60,5 @@ Exit the Spark shell. CTRL-d or :q will do it for you.
 
 Now list this index in Elasticsearch
 
-curl 'localhost:9200/spark/_search?&pretty'
+curl 'localhost:9200/spark/_search?&pretty&size=50'
 
