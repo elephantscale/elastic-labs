@@ -16,9 +16,29 @@ Each student is provided their individual server and credentials
 
 ### STEP 2) Verify the environment
 
-Verify that you have Java installed 
+First make sure Java 8 is installed:
 
-    java -version
+```bash
+java -version
+```
+
+You should get the response:
+
+```console
+openjdk version "1.8.0_232"
+OpenJDK Runtime Environment (build 1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09)
+OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
+```
+
+
+If it is NOT installed or ou have the wrong version installed , execute the following:
+
+```console
+sudo apt update
+sudo apt install default-jdk oracle-java8-installer
+sudo update-alternatives --config java
+```
+
 
 ### STEP 3) Download and install ES
 

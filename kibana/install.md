@@ -12,6 +12,32 @@ Each student is provided their individual server and credentials
 
 (Instructor: use our ubuntu AMI, t2.large or t2.xlarge instances and Elasticsearch security group)
 
+
+First make sure Java 8 is installed:
+ 
+```bash
+java -version
+```
+
+You should get the response:
+
+```console
+openjdk version "1.8.0_232"
+OpenJDK Runtime Environment (build 1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09)
+OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
+```
+
+
+If it is NOT installed or ou have the wrong version installed , execute the following:
+
+```console
+sudo apt update
+sudo apt install default-jdk oracle-java8-installer 
+sudo update-alternatives --config java
+```
+
+And then select the opetion for java 8.
+
 ### STEP 2: Downaload and unpack
  
     wget wget https://s3.amazonaws.com/elephantscale-public/downloads/kibana-5.5.3-linux-x86_64.tar.gz
