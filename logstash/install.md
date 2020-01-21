@@ -1,4 +1,4 @@
-# Logstatsh install
+# Logsta    sh install
 
 In this lab we will practice the installation of Logstash.
 
