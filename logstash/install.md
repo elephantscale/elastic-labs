@@ -29,15 +29,26 @@ If it is NOT installed or ou have the wrong version installed , execute the foll
 ```console
 sudo apt update
 sudo apt install default-jdk oracle-java8-installer
-sudo update-alternatives --config java
+sudo update-alternatives --config java  # select option #2
 ```
 
 
 ### STEP 2: Download and unzip logstash
 
-    wget https://s3.amazonaws.com/elephantscale-public/downloads/logstash-5.5.3.tar.gz
+```bash
+    wget https://s3.amazonaws.com/elephantscale-public/downloads/logstash-5.5.3.tar.gz    #outdated but works ok
     tar xf logstash-5.5.3.tar.gz
     mv logstash-5.5.3 logstash
+    cd logstash
+```
+
+
+The latest version:
+
+```bash
+    wget https://s3.amazonaws.com/elephantscale-public/downloads/logstash-7.5.1.tar.gz    #latest version
+    tar xf logstash-7.5.1.tar.gz
+    mv logstash-7.5.1 logstash
     cd logstash
     
 ### STEP 3: Run logstash interactively
