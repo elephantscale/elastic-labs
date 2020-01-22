@@ -38,11 +38,34 @@ sudo update-alternatives --config java
 
 And then select the opetion for java 8.
 
+
+If you have not done so already, add the following:
+
+```bash
+
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update
+
+```
+
 ### STEP 2: Downaload and unpack
- 
-    wget wget https://s3.amazonaws.com/elephantscale-public/downloads/kibana-5.5.3-linux-x86_64.tar.gz
-    tar -xzf kibana-5.5.3-linux-x86_64.tar.gz
-    mv kibana-5.5.3-linux-x86_64 kibana
+
+```bash 
+wget https://s3.amazonaws.com/elephantscale-public/downloads/kibana-5.5.3-linux-x86_64.tar.gz  # outdated but works ok
+tar -xzf kibana-5.5.3-linux-x86_64.tar.gz
+mv kibana-5.5.3-linux-x86_64 kibana
+```
+
+This is the latest version
+
+
+```bash
+wget https://s3.amazonaws.com/elephantscale-public/downloads/kibana-5.5.3-linux-x86_64.tar.gz  # latest
+wget https://elephantscale-public.s3.amazonaws.com/downloads/kibana-7.5.1-linux-x86_64.tar.gz
+tar -xzf kibana-7.5.1-linux-x86_64.tar.gz
+
+```
     
 ### STEP 3: Start Kibana
 

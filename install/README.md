@@ -39,12 +39,39 @@ sudo apt install default-jdk oracle-java8-installer
 sudo update-alternatives --config java
 ```
 
+And then select the version of java (1.8), usually option number **2.**
+
+
+Also, let's add the elasticsearch keys:
+
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update
+
+```
+
 
 ### STEP 3) Download and install ES
 
-    wget https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-5.5.3.zip
-        unzip elasticsearch-5.5.3.zip
-    cd elasticsearch-5.5.3
+You can use an older version:
+
+```bash
+wget https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-5.5.3.zip  # older but works well
+unzip elasticsearch-5.5.3.zip
+cd elasticsearch-5.5.3
+```
+
+Or the latest verison
+
+
+```bash
+wget "https://elephantscale-public.s3.amazonaws.com/downloads/elasticsearch-7.5.1-no-jdk-linux-x86_64.tar.gz"
+tar zxvf elasticsearch-7.5.1-no-jdk-linux-x86_64.tar.gz
+cd elasticsearch-7.5.1
+```
+
+
 
 ### STEP 4) Start ES
 
@@ -58,7 +85,7 @@ _Tip_: You can run it in the background as a daemon by using the -d option
 
 ### Environment Variables
 
-* The JAVA_OPTS passed to JVM is used by Elasticsearch
+* The `JAVA_OPTS` passed to JVM is used by Elasticsearch
 
 ### Configuration files
 
