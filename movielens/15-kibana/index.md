@@ -2,6 +2,14 @@
 
 In this lab we will install and configure Kibana to use as a dashboard for Elasticsearch
 
+Add the4 following if you have not done so already:
+
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update
+```
+
 Start by installing it. 
 ```
 sudo apt-get update && sudo apt-get install -y kibana 

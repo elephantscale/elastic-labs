@@ -38,6 +38,17 @@ sudo update-alternatives --config java
 
 And then select the opetion for java 8.
 
+
+If you have not done so already, add the following:
+
+```bash
+
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update
+
+```
+
 ### STEP 2: Downaload and unpack
 
 ```bash 

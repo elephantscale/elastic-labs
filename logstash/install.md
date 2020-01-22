@@ -32,6 +32,15 @@ sudo apt install default-jdk oracle-java8-installer
 sudo update-alternatives --config java  # select option #2
 ```
 
+If you have not done so already, add the following:
+
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update
+
+```
+
 
 ### STEP 2: Download and unzip logstash
 

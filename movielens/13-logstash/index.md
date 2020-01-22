@@ -1,6 +1,17 @@
 # Elastic Stack Lab13
 In this lab we are going to install and configure Logstash. 
 
+
+Run the following if you have not done so already
+
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+sudo apt-get update
+
+
+```
+
 Run the following to install Logstash.  
 ```
 sudo apt-get update
