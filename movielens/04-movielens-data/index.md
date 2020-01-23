@@ -12,6 +12,13 @@ source ~/.bashrc
 
 In this lab you will be importing data from the MovieLens dataset we downloaded earlier.  
 
+##  Delete previous index from Lab03
+
+```
+curl -X DELETE "localhost:9200/movies"
+```
+
+
 ## Import Single Document
 Now that we have the mapping configured for ‘year’ we can use `curl` to insert a specific movie. 
 
@@ -19,16 +26,17 @@ Remember that for the purposes of this class we are using `curl` but in most oth
 
 ### Insert movie
 ```bash
-curl -XPUT 127.0.0.1:9200/movies/movie/109488 -d '
+curl -XPUT "localhost:9200/movies/movie/109488" -H 'Content-Type: application/json' -d'
 {
-"genre" : ["IMAX","Sci-Fi"], "title" : "Interstellar", "year" :2014
-}'
+"genre" : ["IMAP","Sci-Fi"], "title" : "Interstellar", "year" :2014
+}
+'
 ```
 
 Let’s break down this command and go through each section. 
 We start with the `curl` command which sends our `PUT` request to Elasticsearch’s API using a `REST` call. 
 
-The data section contains `genre` which is actually a list because we want to map it to `IMAP` and `Sci-Fi` genres. We then give it a `title` and provide the `year` it was released. 
+The data section contains `genre` which is actually a list because we want to map it to `IMAX` and `Sci-Fi` genres. We then give it a `title` and provide the `year` it was released. 
 
 If this ran successfully you should see something like the following confirming it was added.
 
