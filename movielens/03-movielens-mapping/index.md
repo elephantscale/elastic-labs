@@ -18,7 +18,7 @@ On Windows we need to open up Putty and then connect to the session we created p
 
 ## Confirm Elasticsearch is still responding. 
 ```bash
-curl 127.0.0.1:9200 
+curl 'http://localhost:9200/?pretty'
 ```
 
 If it is still running you should get a return like below. 
@@ -44,16 +44,17 @@ If it is still running you should get a return like below.
 Now we are going to create a new mapping so that Elasticsearch knows how to handle the date in the ‘Year’ field of our CSV file.
 
 ```bash
-curl -H "Content-Type: application/json" -XPUT 127.0.0.1:9200/movies -d '
+curl -X PUT "127.0.0.1:9200/movies" -H 'Content-Type: application/json' -d'
 {
-    "mappings": {
-        "movie": {
-            "properties" : {
-                "year" : {"type": "date"}
-           }
-        }
-   }
-}'
+  "mappings": {
+    "properties": {
+      "year": {
+        "type": "date"
+      }
+    }
+  }
+}
+'
 ```
 
 If the mapping was created successfully Elasticsearch API will return the following acknowledgment. 
@@ -64,7 +65,7 @@ If the mapping was created successfully Elasticsearch API will return the follow
 
 Now let’s use `curl` to confirm everything looks right. 
 ```bash
-curl -H "Content-Type: application/json" -XGET 127.0.0.1:9200/movies/_mapping/movie
+curl -X GET "localhost:9200/movies" 
 ```
 
 Our output looks like this
@@ -75,7 +76,7 @@ Our output looks like this
 That’s a lot of data all jumbled together and it’s a pain to read so let’s run that command again but this time we’ll request a better formatted version. 
 
 ```bash
-curl -H "Content-Type: application/json" -XGET 127.0.0.1:9200/movies/_mapping/movie?pretty
+curl -X GET "localhost:9200/movies?pretty"
 ```
 
 ```json
