@@ -100,6 +100,39 @@ We can import many other files as well with simple edits to our `Python` script.
 
 ## Python - tags 
 Copy the `IndexRatings.py` script to `IndexTags.py` and modify it to import all of the data from the `tags.csv` file.
+```Bash
+wget http://bit.ly/es-py-ratings -O IndexTags.py
+```
+Modify to import all of the data from the tags.csv file.
+
+```Bash
+vi IndexTags.py
+```
+Replace readRatings() and es= elastisearch.Elastisearch(): with:
+
+```Bash
+ def readTags():
+     csvfile = open('ml-latest-small/tags.csv', 'r')
+  
+      titleLookup = readMovies()
+  
+      reader = csv.DictReader( csvfile )
+      for line in reader:
+          tag = {}
+          tag['user_id'] = int(line['userId'])
+          tag['movie_id'] = int(line['movieId'])
+          tag['title'] = titleLookup[line['movieId']]
+          tag['tag'] = line['tag']
+          tag['timestamp'] = int(line['timestamp'])
+          yield tags
+  
+  
+  es = elasticsearch.Elasticsearch()
+  
+  es.indices.delete(index="tags",ignore=404)
+  deque(helpers.parallel_bulk(es,readTags(),index="tags",doc_type="tag"), maxlen=0)
+```
+When that is done run it.
 
 ```bash
 python3 IndexTags.py
