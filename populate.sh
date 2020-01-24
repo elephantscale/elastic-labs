@@ -7,7 +7,7 @@ if [ -z $ADDRESS ]; then
 fi
 
 # Check that Elasticsearch is running
-curl -s 'http://$ADDRESS" 2>&1 > /dev/null
+curl -s 'http://$ADDRESS' 2>&1 > /dev/null
 if [ $? != 0 ]; then
     echo "Unable to contact Elasticsearch at $ADDRESS"
     echo "Please ensure Elasticsearch is running and can be reached at http://$ADDRESS/"
@@ -21,14 +21,14 @@ echo "Press [Enter] to continue."
 read
 
 # Delete the old index, swallow failures if it doesn"t exist
-curl -H 'Content-Type: application/json' -XDELETE '$ADDRESS/get-together" > /dev/null
+curl -H 'Content-Type: application/json' -XDELETE '$ADDRESS/get-together'> /dev/null
 
 # Create the next index using mapping.json
 echo "Creating "get-together" index..."
-curl -H 'Content-Type: application/json' -XPUT '$ADDRESS/get-together" -d@$(dirname $0)/mapping.json
+curl -H 'Content-Type: application/json' -XPUT '$ADDRESS/get-together' -d@$(dirname $0)/mapping.json
 
 # Wait for index to become yellow
-curl -H 'Content-Type: application/json' '$ADDRESS/get-together/_health?wait_for_status=yellow&timeout=10s" > /dev/null
+curl -H 'Content-Type: application/json' '$ADDRESS/get-together/_health?wait_for_status=yellow&timeout=10s' > /dev/null
 echo
 echo "Done creating "get-together" index."
 
@@ -385,9 +385,9 @@ echo
 curl -H 'Content-Type: application/json' -XPOST 'http://$ADDRESS/_aliases' -d '
 {
   "actions" : [
-    {"add" : {"index" : "november_2014_invoices', "alias" : "2014_invoices'}},
-    {"add" : {"index" : "december_2014_invoices', "alias" : "2014_invoices'}},
-    {"remove" : {"index" : "myindex", "alias" : "december_2014_invoices'}}
+    {"add" : {"index" : "november_2014_invoices", "alias" : "2014_invoices"}},
+    {"add" : {"index" : "december_2014_invoices", "alias" : "2014_invoices"}},
+    {"remove" : {"index" : "myindex", "alias" : "december_2014_invoices"}}
   ]
 }'
 echo
@@ -399,7 +399,7 @@ curl -H 'Content-Type: application/json' -XPOST 'http://$ADDRESS/_aliases' -d '
     "actions" : [
         {
             "add" : {
-                 "index" : "december_2014_invoices',
+                 "index" : "december_2014_invoices",
                  "alias" : "bigmoney",
                  "filter" :
                  {
