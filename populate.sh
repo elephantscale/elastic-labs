@@ -47,7 +47,7 @@ curl -H 'Content-Type: application/json' -XPOST '$ADDRESS/get-together/group/1' 
 }'
 
 echo
-curl -H 'Content-Type: application/json' '$ADDRESS/get-together/group/2' -d'{
+curl -H 'Content-Type: application/json' -XPOST '$ADDRESS/get-together/group/2' -d'{
   "name": "Elasticsearch Denver",
   "organizer": "Lee",
   "description": "Get together to learn more about using Elasticsearch, the applications and neat things you can do with ES!",
@@ -58,7 +58,7 @@ curl -H 'Content-Type: application/json' '$ADDRESS/get-together/group/2' -d'{
 }'
 
 echo
-curl -H 'Content-Type: application/json' '$ADDRESS/get-together/group/3' -d'{
+curl -H 'Content-Type: application/json' -XPOST '$ADDRESS/get-together/group/3' -d'{
   "name": "Elasticsearch San Francisco",
   "organizer": "Mik",
   "description": "Elasticsearch group for ES users of all knowledge levels",
@@ -69,7 +69,7 @@ curl -H 'Content-Type: application/json' '$ADDRESS/get-together/group/3' -d'{
 }'
 
 echo
-curl -H 'Content-Type: application/json' '$ADDRESS/get-together/group/4' -d'{
+curl -H 'Content-Type: application/json' -XPOST '$ADDRESS/get-together/group/4' -d'{
   "name": "Boulder/Denver big data get-together",
   "organizer": "Andy",
   "description": "Come learn and share your experience with nosql & big data technologies, no experience required",
