@@ -14,29 +14,29 @@ if [ $? != 0 ]; then
     exit -1
 fi
 
-echo "WARNING, this script will delete the 'get-together' and the 'myindex' indices and re-index all data!"
+echo "WARNING, this script will delete the "get-together" and the "myindex" indices and re-index all data!"
 echo "Press Control-C to cancel this operation."
 echo
 echo "Press [Enter] to continue."
 read
 
-# Delete the old index, swallow failures if it doesn't exist
-curl -s -XDELETE "$ADDRESS/get-together" > /dev/null
+# Delete the old index, swallow failures if it doesn"t exist
+curl -H"Content-Type: application/json" -XDELETE "$ADDRESS/get-together" > /dev/null
 
 # Create the next index using mapping.json
-echo "Creating 'get-together' index..."
-curl -s -XPUT "$ADDRESS/get-together" -d@$(dirname $0)/mapping.json
+echo "Creating "get-together" index..."
+curl -H"Content-Type: application/json" -XPUT "$ADDRESS/get-together" -d@$(dirname $0)/mapping.json
 
 # Wait for index to become yellow
-curl -s "$ADDRESS/get-together/_health?wait_for_status=yellow&timeout=10s" > /dev/null
+curl -H"Content-Type: application/json" "$ADDRESS/get-together/_health?wait_for_status=yellow&timeout=10s" > /dev/null
 echo
-echo "Done creating 'get-together' index."
+echo "Done creating "get-together" index."
 
 echo
 echo "Indexing data..."
 
 echo "Indexing groups..."
-curl -s -XPOST "$ADDRESS/get-together/group/1" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/group/1" -d"{
   "name": "Denver Clojure",
   "organizer": ["Daniel", "Lee"],
   "description": "Group of Clojure enthusiasts from Denver who want to hack on code together and learn more about Clojure",
@@ -44,10 +44,10 @@ curl -s -XPOST "$ADDRESS/get-together/group/1" -d'{
   "tags": ["clojure", "denver", "functional programming", "jvm", "java"],
   "members": ["Lee", "Daniel", "Mike"],
   "location_group": "Denver, Colorado, USA"
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/group/2" -d'{
+curl -H"Content-Type: application/json" "$ADDRESS/get-together/group/2" -d"{
   "name": "Elasticsearch Denver",
   "organizer": "Lee",
   "description": "Get together to learn more about using Elasticsearch, the applications and neat things you can do with ES!",
@@ -55,10 +55,10 @@ curl -s -XPOST "$ADDRESS/get-together/group/2" -d'{
   "tags": ["denver", "elasticsearch", "big data", "lucene", "solr"],
   "members": ["Lee", "Mike"],
   "location_group": "Denver, Colorado, USA"
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/group/3" -d'{
+curl -H"Content-Type: application/json" "$ADDRESS/get-together/group/3" -d"{
   "name": "Elasticsearch San Francisco",
   "organizer": "Mik",
   "description": "Elasticsearch group for ES users of all knowledge levels",
@@ -66,10 +66,10 @@ curl -s -XPOST "$ADDRESS/get-together/group/3" -d'{
   "tags": ["elasticsearch", "big data", "lucene", "open source"],
   "members": ["Lee", "Igor"],
   "location_group": "San Francisco, California, USA"
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/group/4" -d'{
+curl -H"Content-Type: application/json" "$ADDRESS/get-together/group/4" -d"{
   "name": "Boulder/Denver big data get-together",
   "organizer": "Andy",
   "description": "Come learn and share your experience with nosql & big data technologies, no experience required",
@@ -77,10 +77,10 @@ curl -s -XPOST "$ADDRESS/get-together/group/4" -d'{
   "tags": ["big data", "data visualization", "open source", "cloud computing", "hadoop"],
   "members": ["Greg", "Bill"],
   "location_group": "Boulder, Colorado, USA"
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/group/5" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/group/5" -d"{
   "name": "Enterprise search London get-together",
   "organizer": "Tyler",
   "description": "Enterprise search get-togethers are an opportunity to get together with other people doing search.",
@@ -88,14 +88,14 @@ curl -s -XPOST "$ADDRESS/get-together/group/5" -d'{
   "tags": ["enterprise search", "apache lucene", "solr", "open source", "text analytics"],
   "members": ["Clint", "James"],
   "location_group": "London, England, UK"
-}'
+}"
 
 echo
 echo "Done indexing groups."
 
 echo "Indexing events..."
 
-curl -s -XPOST "$ADDRESS/get-together/event/100?parent=1" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/100?parent=1" -d"{
   "host": ["Lee", "Troy"],
   "title": "Liberator and Immutant",
   "description": "We will discuss two different frameworks in Clojure for doing different things. Liberator is a ring-compatible web framework based on Erlang Webmachine. Immutant is an all-in-one enterprise application based on JBoss.",
@@ -106,9 +106,9 @@ curl -s -XPOST "$ADDRESS/get-together/event/100?parent=1" -d'{
     "geolocation": "39.752337,-105.00083"
   },
   "reviews": 4
-}'
+}"
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/101?parent=1" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/101?parent=1" -d"{
   "host": "Sean",
   "title": "Sunday, Surly Sunday",
   "description": "Sort out any setup issues and work on Surlybird issues. We can use the EC2 node as a bounce point for pairing.",
@@ -118,10 +118,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/101?parent=1" -d'{
     "name": "IRC, #denofclojure"
   },
   "reviews": 2
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/102?parent=1" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/102?parent=1" -d"{
   "host": "Daniel",
   "title": "10 Clojure coding techniques you should know, and project openbike",
   "description": "What are ten Clojure coding techniques that you wish everyone knew? We will also check on the status of Project Openbike.",
@@ -132,10 +132,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/102?parent=1" -d'{
     "geolocation": "39.752337,-105.00083"
   },
   "reviews": 3
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/103?parent=2" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/103?parent=2" -d"{
   "host": "Lee",
   "title": "Introduction to Elasticsearch",
   "description": "An introduction to ES and each other. We can meet and greet and I will present on some Elasticsearch basics and how we use it.",
@@ -146,10 +146,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/103?parent=2" -d'{
     "geolocation": "39.752337,-105.00083"
   },
   "reviews": 5
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/104?parent=2" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/104?parent=2" -d"{
   "host": "Lee",
   "title": "Queries and Filters",
   "description": "A get together to talk about different ways to query Elasticsearch, what works best for different kinds of applications.",
@@ -160,10 +160,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/104?parent=2" -d'{
     "geolocation": "39.752337,-105.00083"
   },
   "reviews": 1
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/105?parent=2" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/105?parent=2" -d"{
   "host": "Lee",
   "title": "Elasticsearch and Logstash",
   "description": "We can get together and talk about Logstash - http://logstash.net with a sneak peek at Kibana",
@@ -174,10 +174,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/105?parent=2" -d'{
     "geolocation": "39.752337,-105.00083"
   },
   "reviews": null
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/106?parent=3" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/106?parent=3" -d"{
   "host": "Mik",
   "title": "Social management and monitoring tools",
   "description": "Shay Banon will be there to answer questions and we can talk about management tools.",
@@ -188,10 +188,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/106?parent=3" -d'{
     "geolocation": "37.798442,-122.399801"
   },
   "reviews": 5
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/107?parent=3" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/107?parent=3" -d"{
   "host": "Mik",
   "title": "Logging and Elasticsearch",
   "description": "Get a deep dive for what Elasticsearch is and how it can be used for logging with Logstash as well as Kibana!",
@@ -202,10 +202,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/107?parent=3" -d'{
     "geolocation": "37.793592,-122.397033"
   },
   "reviews": 3
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/108?parent=3" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/108?parent=3" -d"{
   "host": "Elyse",
   "title": "Piggyback on Elasticsearch training in San Francisco",
   "description": "We can piggyback on training by Elasticsearch to have some Q&A time with the ES devs",
@@ -216,10 +216,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/108?parent=3" -d'{
     "geolocation": "37.787742,-122.398964"
   },
   "reviews": 5
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/109?parent=4" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/109?parent=4" -d"{
   "host": "Andy",
   "title": "Hortonworks, the future of Hadoop and big data",
   "description": "Presentation on the work that hortonworks is doing on Hadoop",
@@ -230,10 +230,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/109?parent=4" -d'{
     "geolocation": "39.748477,-104.998852"
   },
   "reviews": 2
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/110?parent=4" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/110?parent=4" -d"{
   "host": "Andy",
   "title": "Big Data and the cloud at Microsoft",
   "description": "Discussion about the Microsoft Azure cloud and HDInsight.",
@@ -244,10 +244,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/110?parent=4" -d'{
     "geolocation": "40.018528,-105.275806"
   },
   "reviews": 1
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/111?parent=4" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/111?parent=4" -d"{
   "host": "Andy",
   "title": "Moving Hadoop to the mainstream",
   "description": "Come hear about how Hadoop is moving to the main stream",
@@ -258,10 +258,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/111?parent=4" -d'{
     "geolocation": "39.959409,-105.163497"
   },
   "reviews": 4
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/112?parent=5" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/112?parent=5" -d"{
   "host": "Dave Nolan",
   "title": "real-time Elasticsearch",
   "description": "We will discuss using Elasticsearch to index data in real time",
@@ -272,10 +272,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/112?parent=5" -d'{
     "geolocation": "51.524806,-0.099095"
   },
   "reviews": 3
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/113?parent=5" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/113?parent=5" -d"{
   "host": "Dave",
   "title": "Elasticsearch at Rangespan and Exonar",
   "description": "Representatives from Rangespan and Exonar will come and discuss how they use Elasticsearch",
@@ -286,10 +286,10 @@ curl -s -XPOST "$ADDRESS/get-together/event/113?parent=5" -d'{
     "geolocation": "51.51558,-0.117699"
   },
   "reviews": 3
-}'
+}"
 
 echo
-curl -s -XPOST "$ADDRESS/get-together/event/114?parent=5" -d'{
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/event/114?parent=5" -d"{
   "host": "Yann",
   "title": "Using Hadoop with Elasticsearch",
   "description": "We will walk through using Hadoop with Elasticsearch for big data crunching!",
@@ -300,13 +300,13 @@ curl -s -XPOST "$ADDRESS/get-together/event/114?parent=5" -d'{
     "geolocation": "51.524806,-0.099095"
   },
   "reviews": 2
-}'
+}"
 
 echo
 echo "Done indexing events."
 
 # Refresh so data is available
-curl -s -XPOST "$ADDRESS/get-together/_refresh"
+curl -H"Content-Type: application/json" -XPOST "$ADDRESS/get-together/_refresh"
 
 echo
 echo "Done indexing data."
@@ -314,7 +314,7 @@ echo
 
 echo
 echo "Creating Templates."
-curl -s -XPUT "http://$ADDRESS/_template/logging_index_all" -d'{
+curl -H"Content-Type: application/json" -XPUT "http://$ADDRESS/_template/logging_index_all" -d"{
     "template" : "logstash-09-*",
     "order" : 1,
     "settings" : {
@@ -322,25 +322,25 @@ curl -s -XPUT "http://$ADDRESS/_template/logging_index_all" -d'{
         "number_of_replicas" : 1
     },
     "alias" : { "november" : {} }
-}'
+}"
 
 echo
-curl -s -XPUT "http://$ADDRESS/_template/logging_index" -d '{
+curl -H"Content-Type: application/json" -XPUT "http://$ADDRESS/_template/logging_index" -d "{
     "template" : "logstash-*",
     "order" : 0,
     "settings" : {
         "number_of_shards" : 2,
         "number_of_replicas" : 1
     }
-}'
+}"
 echo
 echo "Done Creating Templates."
 
 
 echo
 echo "Adding Dynamic Mapping"
-curl -s -XDELETE "http://$ADDRESS/myindex" > /dev/null
-curl -s -XPUT "http://$ADDRESS/myindex" -d'
+curl -H"Content-Type: application/json" -XDELETE "http://$ADDRESS/myindex" > /dev/null
+curl -H"Content-Type: application/json" -XPUT "http://$ADDRESS/myindex" -d"
 {
     "mappings" : {
         "my_type" : {
@@ -356,17 +356,17 @@ curl -s -XPUT "http://$ADDRESS/myindex" -d'
             }]
         }
     }
-}'
+}"
 echo
 echo "Done Adding Dynamic Mapping"
 
 echo
 echo "Adding Aliases"
-curl -s -XDELETE "http://$ADDRESS/november_2014_invoices" > /dev/null
-curl -s -XDELETE "http://$ADDRESS/december_2014_invoices" > /dev/null
-curl -s -XPUT "http://$ADDRESS/november_2014_invoices" -d'{}'
+curl -H"Content-Type: application/json" -XDELETE "http://$ADDRESS/november_2014_invoices" > /dev/null
+curl -H"Content-Type: application/json" -XDELETE "http://$ADDRESS/december_2014_invoices" > /dev/null
+curl -H"Content-Type: application/json" -XPUT "http://$ADDRESS/november_2014_invoices" -d"{}"
 echo
-curl -s -XPUT "http://$ADDRESS/december_2014_invoices" -d'
+curl -H"Content-Type: application/json" -XPUT "http://$ADDRESS/december_2014_invoices" -d"
 {
     "mappings" :
     {
@@ -378,23 +378,23 @@ curl -s -XPUT "http://$ADDRESS/december_2014_invoices" -d'
             }
         }
     }
-}'
+}"
 
 echo
 
-curl -s -XPOST "http://$ADDRESS/_aliases" -d'
+curl -H"Content-Type: application/json" -XPOST "http://$ADDRESS/_aliases" -d"
 {
   "actions" : [
     {"add" : {"index" : "november_2014_invoices", "alias" : "2014_invoices"}},
     {"add" : {"index" : "december_2014_invoices", "alias" : "2014_invoices"}},
     {"remove" : {"index" : "myindex", "alias" : "december_2014_invoices"}}
   ]
-}'
+}"
 echo
 echo "Done Adding Aliases"
 
 echo "Adding Filter Alias"
-curl -s -XPOST "http://$ADDRESS/_aliases" -d '
+curl -H"Content-Type: application/json" -XPOST "http://$ADDRESS/_aliases" -d "
 {
     "actions" : [
         {
@@ -415,13 +415,13 @@ curl -s -XPOST "http://$ADDRESS/_aliases" -d '
             }
         }
     ]
-}'
+}"
 echo
 echo "Done Adding Filter Alias"
 
 echo
 echo "Adding Routing Alias"
-curl -s -XPOST "http://$ADDRESS/_aliases" -d '
+curl -H"Content-Type: application/json" -XPOST "http://$ADDRESS/_aliases" -d "
 {
     "actions" : [
         {
@@ -433,7 +433,7 @@ curl -s -XPOST "http://$ADDRESS/_aliases" -d '
             }
         }
     ]
-}'
+}"
 echo
 echo "Done Adding Routing Alias"
 
