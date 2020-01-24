@@ -3,7 +3,33 @@ In this lab you will be learning more about the `_version` field and how it can 
 
 ## Check version number of a document 
 * Use `curl` with the `GET` verb to get a list of the documents in the `movies` index
-* Choose one of these movies and note the `id` , and `_version` fields. 
+* Choose one of these movies and note the `id` , and `_version` fields.
+As an example lets do interstellar.  
+```
+curl -XGET 127.0.0.1:9200/movies/movie/109487?pretty
+```
+You should get the following ouput:
+```
+{
+  "_index" : "movies",
+  "_type" : "movie",
+  "_id" : "109487",
+  "_version" : 3,
+  "_seq_no" : 6,
+  "_primary_term" : 1,
+  "found" : true,
+  "_source" : {
+    "id" : "109487",
+    "title" : "Interstellar",
+    "year" : 2014,
+    "genre" : [
+      "IMAX",
+      "Sci-FI"
+    ]
+  }
+}
+```
+
 
 Elasticsearch allows us to specify a specific version when we go to update a document, this is so we can use optimal concurrency control to ensure the correct version is updated and there’s no conflicts.
 

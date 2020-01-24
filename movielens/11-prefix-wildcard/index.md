@@ -6,10 +6,14 @@ We need to create a new mapping and to do that we have to delete the index.
 
 * Delete `movies` index using same steps as previous labs.
 
+```bash
+curl -XDELETE 127.0.0.1:9200/movies
+```
+
 Now that’s complete let’s go ahead and create a new mapping for the `year` field as a `keyword` .
 
 ```bash
-curl -XPUT 127.0.0.1:9200/movies/ -d '
+curl -XPUT 127.0.0.1:9200/movies/?include_type_name=true -d '
 {
     "mappings": {
         "movie":  {
@@ -111,7 +115,7 @@ Looking through the results should show you an example of how the analyzer will 
 
 Now we need to apply this new analyzer to our `title` field and create a new mapping. 
 ```bash
-curl -XPUT '127.0.0.1:9200/movies/_mapping/movie?pretty' -d '
+curl -XPUT 127.0.0.1:9200/movies/_mapping/movie/?include_type_name=true -d '
 { 
     "movie": {
         "properties": {
