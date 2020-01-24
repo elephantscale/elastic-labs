@@ -77,10 +77,12 @@ Ok well that title isn’t as clever as I originally thought.  Let’s go ahead 
 Using `curl`  with the `POST` verb create a new document with the same `_id` of `109487` and the following data 
 ```json
 {
-    "genre" : ["IMAX","Sci-FI"], 
-    "title" : "Interstellar", 
-    "year" :2014
-}
+    "doc": {
+        "genre" : ["IMAX","Sci-FI"], 
+        "title" : "Interstellar", 
+        "year" :2014
+    }
+}'
 ```
 
 What happened?  Does the document still have version `2`

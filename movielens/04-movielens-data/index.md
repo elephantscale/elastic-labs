@@ -1,7 +1,17 @@
 # Elastic Stack Lab04
 Before beginning this lab create the alias for `curl` discussed in the slides. 
 
-Open `~/.bashrc` in vim or your favorite editor and add: 
+Open `~/.bashrc` in vim or your favorite editor: 
+
+``` 
+vi ~/.bashrc
+```
+or 
+```
+vim ~/.bashrc
+```
+Add the following then save and exit:
+
 ```
 alias curl="/usr/bin/curl -H 'Content-type: application/json' "
 ```
@@ -182,6 +192,8 @@ curl -XGET 127.0.0.1:9200/movies/_search?pretty -d '
 }
 '
 ```
+
+What movies did it return?
 
 Now play around and search using other fields. 
 

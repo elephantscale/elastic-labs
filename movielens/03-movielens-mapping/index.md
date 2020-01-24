@@ -74,7 +74,7 @@ curl -X GET "localhost:9200/movies"
 
 Our output looks like this
 ```json
-{"movies":{"mappings":{"movie":{"properties":{"year":{"type":"date"}}}}}}
+{"movies":{"aliases":{},"mappings":{"properties":{"movies":{"properties":{"year":{"type":"date"}}}}}
 ```
 
 That’s a lot of data all jumbled together and it’s a pain to read so let’s run that command again but this time we’ll request a better formatted version. 
@@ -86,17 +86,18 @@ curl -X GET "localhost:9200/movies?pretty"
 ```json
 {
   "movies" : {
+    "aliases" : { },
     "mappings" : {
-      "movie" : {
-        "properties" : {
-          "year" : {
-            "type" : "date"
+      "properties" : {
+        "movies" : {
+          "properties" : {
+            "year" : {
+              "type" : "date"
+            }
           }
         }
       }
-    }
-  }
-}
+    },
 ```
 
 There we go now it looks much cleaner.  Remember you can add `?pretty` to any `GET` request and it will format the data in a much nicer way.
