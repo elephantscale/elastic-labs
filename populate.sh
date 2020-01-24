@@ -7,7 +7,7 @@ if [ -z $ADDRESS ]; then
 fi
 
 # Check that Elasticsearch is running
-curl -s 'http://$ADDRESS' 2>&1 > /dev/null
+curl -s "http://$ADDRESS" 2>&1 > /dev/null
 if [ $? != 0 ]; then
     echo "Unable to contact Elasticsearch at $ADDRESS"
     echo "Please ensure Elasticsearch is running and can be reached at http://$ADDRESS/"
