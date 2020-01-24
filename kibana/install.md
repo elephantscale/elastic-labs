@@ -7,36 +7,17 @@ Lab Goals:
 
 
 ### STEP 1: Login to the server
- 
+
 Each student is provided their individual server and credentials
 
 (Instructor: use our ubuntu AMI, t2.large or t2.xlarge instances and Elasticsearch security group)
 
 
 First make sure Java 8 is installed:
- 
+
 ```bash
 java -version
 ```
-
-You should get the response:
-
-```console
-openjdk version "1.8.0_232"
-OpenJDK Runtime Environment (build 1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09)
-OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
-```
-
-
-If it is NOT installed or ou have the wrong version installed , execute the following:
-
-```console
-sudo apt update
-sudo apt install default-jdk oracle-java8-installer 
-sudo update-alternatives --config java
-```
-
-And then select the opetion for java 8.
 
 
 If you have not done so already, add the following:
@@ -44,37 +25,29 @@ If you have not done so already, add the following:
 ```bash
 
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 sudo apt-get update
 
 ```
 
-### STEP 2: Downaload and unpack
-
-```bash 
-wget https://s3.amazonaws.com/elephantscale-public/downloads/kibana-5.5.3-linux-x86_64.tar.gz  # outdated but works ok
-tar -xzf kibana-5.5.3-linux-x86_64.tar.gz
-mv kibana-5.5.3-linux-x86_64 kibana
-```
-
-This is the latest version
+### STEP 2: Download and unpack
 
 
 ```bash
-wget https://s3.amazonaws.com/elephantscale-public/downloads/kibana-5.5.3-linux-x86_64.tar.gz  # latest
+ # latest
 wget https://elephantscale-public.s3.amazonaws.com/downloads/kibana-7.5.1-linux-x86_64.tar.gz
 tar -xzf kibana-7.5.1-linux-x86_64.tar.gz
-
+mv kibana-7.5.1-linux-x86_64 kibana
 ```
-    
+
 ### STEP 3: Start Kibana
 
     cd kibana/
     ./bin/kibana
-    
-Configuring Kibana via config fileedit
-Kibana loads its configuration from the $KIBANA_HOME/config/kibana.yml file by default. 
-The format of this config file is explained in [Configuring Kibana](https://www.elastic.co/guide/en/kibana/5.5/settings.html).
+
+Configuring Kibana via config file.
+Kibana loads its configuration from the $KIBANA_HOME/config/kibana.yml file by default.
+The format of this config file is explained in [Configuring Kibana](https://www.elastic.co/guide/en/kibana/7.5/settings.html).
 
 ### STEP 4: Accessing Kibana
 
