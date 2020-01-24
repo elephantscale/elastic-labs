@@ -22,13 +22,6 @@ First make sure Java 8 is installed:
 java -version
 ```
 
-You should get the response:
-
-```console
-openjdk version "1.8.0_232"
-OpenJDK Runtime Environment (build 1.8.0_232-8u232-b09-0ubuntu1~18.04.1-b09)
-OpenJDK 64-Bit Server VM (build 25.232-b09, mixed mode)
-```
 
 Also, let's add the elasticsearch keys:
 
