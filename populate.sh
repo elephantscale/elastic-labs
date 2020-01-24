@@ -426,8 +426,8 @@ curl -H 'Content-Type: application/json' -XPOST 'http://$ADDRESS/_aliases' -d '
     "actions" : [
         {
             "add" : {
-                 "index" : "december_2014_invoices',
-                 "alias" : "2014_invoices',
+                 "index" : "december_2014_invoices",
+                 "alias" : "2014_invoices",
                  "search_routing" : "en,es",
                  "index_routing" : "en"
             }
