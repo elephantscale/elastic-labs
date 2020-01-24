@@ -22,13 +22,6 @@ source ~/.bashrc
 
 In this lab you will be importing data from the MovieLens dataset we downloaded earlier.  
 
-##  Delete previous index from Lab03
-
-```
-curl -X DELETE "localhost:9200/movies"
-```
-
-
 ## Import Single Document
 Now that we have the mapping configured for ‘year’ we can use `curl` to insert a specific movie. 
 

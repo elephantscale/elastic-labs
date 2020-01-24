@@ -44,21 +44,16 @@ If it is still running you should get a return like below.
 Now we are going to create a new mapping so that Elasticsearch knows how to handle the date in the ‘Year’ field of our CSV file.
 
 ```bash
-curl -X PUT "localhost:9200/movies?pretty" -H 'Content-Type: application/json' -d'
+curl -H "Content-Type: application/json" -XPUT 127.0.0.1:9200/movies/?include_type_name=true -d '
 {
-  "mappings": {
-    "properties": {
-      "movies": {
-        "properties": {
-          "year": {
-            "type": "date"
-          }
+    "mappings": {
+        "movie": {
+            "properties" : {
+                "year" : {"type": "date"}
+           }
         }
-      }
-    }
-  }
-}
-'
+   }
+}'
 ```
 
 If the mapping was created successfully Elasticsearch API will return the following acknowledgment. 
@@ -69,18 +64,18 @@ If the mapping was created successfully Elasticsearch API will return the follow
 
 Now let’s use `curl` to confirm everything looks right. 
 ```bash
-curl -X GET "localhost:9200/movies" 
+curl -XGET 127.0.0.1:9200/movies
 ```
 
 Our output looks like this
 ```json
-{"movies":{"aliases":{},"mappings":{"properties":{"movies":{"properties":{"year":{"type":"date"}}}}}
+{"movies":{"aliases":{},"mappings":{"properties":{"year":{"type":"date"}
 ```
 
 That’s a lot of data all jumbled together and it’s a pain to read so let’s run that command again but this time we’ll request a better formatted version. 
 
 ```bash
-curl -X GET "localhost:9200/movies?pretty"
+ curl -XGET 127.0.0.1:9200/movies?pretty
 ```
 
 ```json
@@ -89,15 +84,12 @@ curl -X GET "localhost:9200/movies?pretty"
     "aliases" : { },
     "mappings" : {
       "properties" : {
-        "movies" : {
-          "properties" : {
-            "year" : {
-              "type" : "date"
-            }
-          }
+        "year" : {
+          "type" : "date"
         }
       }
     },
+
 ```
 
 There we go now it looks much cleaner.  Remember you can add `?pretty` to any `GET` request and it will format the data in a much nicer way.

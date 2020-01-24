@@ -20,13 +20,13 @@ We are going to do a search for “Star Trek” across our `movies` index and re
 
 In a terminal use `curl` with a `GET` request to search the `movies` index with the following data 
 ```json
+curl -XGET 127.0.0.1:9200/movies/_search?pretty -d '
 {
-  "query": {
-    "match": {
-       "title": "Star Trek"
+    "query" : {
+        "term" : { "title" : "Star Trek" }
     }
-  }
 }
+'
 ``` 
 
 Now review the results, did you get what you were expecting? 
@@ -64,7 +64,7 @@ curl -XDELETE 127.0.0.1:9200/movies
 Now we need to create a new `movies` index with some changes to the way it searches text. 
 
 ```bash
-curl -XPUT 127.0.0.1:9200/movies -d '
+curl -XPUT 127.0.0.1:9200/movies?include_type_name=true -d'
 {
     "mappings" : {
         "movie": {
