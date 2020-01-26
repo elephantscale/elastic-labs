@@ -7,25 +7,47 @@ Lab Goals:
 
 
 ### STEP 1: Login to the server
- 
+
 Each student is provided their individual server and credentials
 
 (Instructor: use our ubuntu AMI, t2.large or t2.xlarge instances and Elasticsearch security group)
 
-### STEP 2: Downaload and unpack
- 
-    wget wget https://s3.amazonaws.com/elephantscale-public/downloads/kibana-5.5.3-linux-x86_64.tar.gz
-    tar -xzf kibana-5.5.3-linux-x86_64.tar.gz
-    mv kibana-5.5.3-linux-x86_64 kibana
-    
+
+First make sure Java 8 is installed:
+
+```bash
+java -version
+```
+
+
+If you have not done so already, add the following:
+
+```bash
+
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt-get update
+
+```
+
+### STEP 2: Download and unpack
+
+
+```bash
+ # latest
+wget https://elephantscale-public.s3.amazonaws.com/downloads/kibana-7.5.1-linux-x86_64.tar.gz
+tar -xzf kibana-7.5.1-linux-x86_64.tar.gz
+mv kibana-7.5.1-linux-x86_64 kibana
+```
+
 ### STEP 3: Start Kibana
 
     cd kibana/
     ./bin/kibana
-    
-Configuring Kibana via config fileedit
-Kibana loads its configuration from the $KIBANA_HOME/config/kibana.yml file by default. 
-The format of this config file is explained in [Configuring Kibana](https://www.elastic.co/guide/en/kibana/5.5/settings.html).
+
+Configuring Kibana via config file.
+Kibana loads its configuration from the $KIBANA_HOME/config/kibana.yml file by default.
+The format of this config file is explained in [Configuring Kibana](https://www.elastic.co/guide/en/kibana/7.5/settings.html).
 
 ### STEP 4: Accessing Kibana
 

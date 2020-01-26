@@ -9,36 +9,57 @@ Lab Goals:
 * Prepare to use this install for all subsequent labs
 
 ### STEP 1) Login to the server
- 
+
 Each student is provided their individual server and credentials
 
 (Instructor: use our ubuntu AMI, t2.large or t2.xlarge instances and Elasticsearch security group)
 
 ### STEP 2) Verify the environment
 
-Verify that you have Java installed 
+First make sure Java 8 is installed:
 
-    java -version
+```bash
+java -version
+```
+
+
+Also, let's add the elasticsearch keys:
+
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt-get update
+
+```
+
 
 ### STEP 3) Download and install ES
 
-    wget https://s3.amazonaws.com/elephantscale-public/downloads/elasticsearch-5.5.3.zip
-        unzip elasticsearch-5.5.3.zip
-    cd elasticsearch-5.5.3
+
+Download the latest version
+
+
+```bash
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.5.2-linux-x86_64.tar.gz
+tar zxvf elasticsearch-7.5.2-linux-x86_64.tar.gz
+cd elasticsearch-7.5.2/
+```
+
+
 
 ### STEP 4) Start ES
 
     bin/elasticsearch
-    
+
 _Tip_: You can run it in the background as a daemon by using the -d option
-    
+
 ### STEP 5) Verify install
 
     curl 'http://localhost:9200/?pretty'
 
 ### Environment Variables
 
-* The JAVA_OPTS passed to JVM is used by Elasticsearch
+* The `JAVA_OPTS` passed to JVM is used by Elasticsearch
 
 ### Configuration files
 
@@ -47,17 +68,13 @@ _Tip_: You can run it in the background as a daemon by using the -d option
 Configure different Elasticsearch modules.
 
     logging.yml
-    
+
 Configure the Elasticsearch logging
-    
+
 ### STEP 6) ES options
 
-    bin/elasticsearch 
+    bin/elasticsearch
 or
     bin/elasticsearch --help
-    
+
 Study the options
-
-
-
-
