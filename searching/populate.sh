@@ -96,7 +96,9 @@ echo "Done indexing groups."
 
 echo "Indexing events..."
 
-curl -XPOST "localhost:9200/get-together/event/100?parent=1" -d'
+curl -XPUT "localhost:9200/events?include_type_name=true"
+
+curl -XPOST "localhost:9200/events/event/100" -d'
 {
   "host": ["Lee", "Troy"],
   "title": "Liberator and Immutant",
@@ -110,7 +112,7 @@ curl -XPOST "localhost:9200/get-together/event/100?parent=1" -d'
   "reviews": 4
 }'
 echo
-curl -XPOST "localhost:9200/get-together/event/101?parent=1" -d'
+curl -XPOST "localhost:9200/events/event/101" -d'
 {
   "host": "Sean",
   "title": "Sunday, Surly Sunday",
@@ -124,7 +126,7 @@ curl -XPOST "localhost:9200/get-together/event/101?parent=1" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/102?parent=1" -d'
+curl -XPOST "localhost:9200/events/event/102" -d'
 {
   "host": "Daniel",
   "title": "10 Clojure coding techniques you should know, and project openbike",
@@ -139,7 +141,7 @@ curl -XPOST "localhost:9200/get-together/event/102?parent=1" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/103?parent=2" -d'
+curl -XPOST "localhost:9200/events/event/103" -d'
 {
   "host": "Lee",
   "title": "Introduction to Elasticsearch",
@@ -154,7 +156,7 @@ curl -XPOST "localhost:9200/get-together/event/103?parent=2" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/104?parent=2" -d'
+curl -XPOST "localhost:9200/events/event/104" -d'
 {
   "host": "Lee",
   "title": "Queries and Filters",
@@ -169,7 +171,7 @@ curl -XPOST "localhost:9200/get-together/event/104?parent=2" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/105?parent=2" -d'
+curl -XPOST "localhost:9200/events/event/105" -d'
 {
   "host": "Lee",
   "title": "Elasticsearch and Logstash",
@@ -184,7 +186,7 @@ curl -XPOST "localhost:9200/get-together/event/105?parent=2" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/106?parent=3" -d'
+curl -XPOST "localhost:9200/events/event/106" -d'
 {
   "host": "Mik",
   "title": "Social management and monitoring tools",
@@ -199,7 +201,7 @@ curl -XPOST "localhost:9200/get-together/event/106?parent=3" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/107?parent=3" -d'
+curl -XPOST "localhost:9200/events/event/107" -d'
 {
   "host": "Mik",
   "title": "Logging and Elasticsearch",
@@ -214,7 +216,7 @@ curl -XPOST "localhost:9200/get-together/event/107?parent=3" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/108?parent=3" -d'
+curl -XPOST "localhost:9200/events/event/108" -d'
 {
   "host": "Elyse",
   "title": "Piggyback on Elasticsearch training in San Francisco",
@@ -229,7 +231,7 @@ curl -XPOST "localhost:9200/get-together/event/108?parent=3" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/109?parent=4" -d'
+curl -XPOST "localhost:9200/events/event/109" -d'
 {
   "host": "Andy",
   "title": "Hortonworks, the future of Hadoop and big data",
@@ -244,7 +246,7 @@ curl -XPOST "localhost:9200/get-together/event/109?parent=4" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/110?parent=4" -d'
+curl -XPOST "localhost:9200/events/event/110" -d'
 {
   "host": "Andy",
   "title": "Big Data and the cloud at Microsoft",
@@ -259,7 +261,7 @@ curl -XPOST "localhost:9200/get-together/event/110?parent=4" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/111?parent=4" -d'
+curl -XPOST "localhost:9200/events/event/111" -d'
 {
   "host": "Andy",
   "title": "Moving Hadoop to the mainstream",
@@ -274,7 +276,7 @@ curl -XPOST "localhost:9200/get-together/event/111?parent=4" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/112?parent=5" -d'
+curl -XPOST "localhost:9200/events/event/112" -d'
 {
   "host": "Dave Nolan",
   "title": "real-time Elasticsearch",
@@ -289,7 +291,7 @@ curl -XPOST "localhost:9200/get-together/event/112?parent=5" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/113?parent=5" -d'
+curl -XPOST "localhost:9200/events/event/113" -d'
 {
   "host": "Dave",
   "title": "Elasticsearch at Rangespan and Exonar",
@@ -304,7 +306,7 @@ curl -XPOST "localhost:9200/get-together/event/113?parent=5" -d'
 }'
 
 echo
-curl -XPOST "localhost:9200/get-together/event/114?parent=5" -d'
+curl -XPOST "localhost:9200/events/event/114" -d'
 {
   "host": "Yann",
   "title": "Using Hadoop with Elasticsearch",
