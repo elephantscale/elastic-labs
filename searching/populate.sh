@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
-ADDRESS=$1
-
-if [ -z $ADDRESS ]; then
 ADDRESS="localhost:9200"
-fi
+
 
 # Check that Elasticsearch is running
 curl -s "http://$ADDRESS" 2>&1 > /dev/null
@@ -36,7 +33,7 @@ echo
 echo "Indexing data..."
 
 echo "Indexing groups..."
-curl -XPOST "$ADDRESS/get-together/group/1" -d'{
+curl -XPOST "localhost:9200/get-together/group/1" -d'{
   "name": "Denver Clojure",
   "organizer": ["Daniel", "Lee"],
   "description": "Group of Clojure enthusiasts from Denver who want to hack on code together and learn more about Clojure",
@@ -83,7 +80,7 @@ curl -XPOST "$ADDRESS/get-together/group/4" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/group/5" -d'
+curl -XPOST "localhost:9200/get-together/group/5" -d'
 {
   "name": "Enterprise search London get-together",
   "organizer": "Tyler",
