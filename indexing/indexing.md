@@ -15,14 +15,14 @@ Each student is provided their individual server and credentials
 
 ### STEP 2: Index one document
 
-    curl -XPUT 'localhost:9200/get-together/group/1?pretty' -d '{
+    curl -XPUT  "localhost:9200/get-together/group/1?include_type_name=true " -d '{
     "name": "Elasticsearch Denver",
     "organizer": "Lee"
     }'
 
 ### STEP 3: Practice index create, list, delete
 
-    curl   –H "Content-Type: application/json" -XPUT "localhost:9200/new-index?include_type_name=true"
+    curl -XPUT 127.0.0.1:9200/new-index?include_type_name=true
 
     curl -XDELETE 'localhost:9200/new-index'
 
