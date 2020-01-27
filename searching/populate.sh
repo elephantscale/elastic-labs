@@ -25,7 +25,7 @@ curl -H "Content-Type: application/json" -XDELETE "$ADDRESS/get-together"> /dev/
 
 # Create the next index using mapping.json
 echo "Creating "get-together" index..."
-curl -H "Content-Type: application/json" -XPUT "$ADDRESS/get-together?include_type_name=true" -d@$(dirname $0)/mapping.json
+curl -H "Content-Type: application/json" -XPUT "$ADDRESS/get-together?include_type_name=true" @$(dirname $0)/mapping.json
 
 # Wait for index to become yellow
 curl -H "Content-Type: application/json" "$ADDRESS/get-together/_health?wait_for_status=yellow&timeout=10s" > /dev/null
