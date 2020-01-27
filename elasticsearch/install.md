@@ -29,9 +29,9 @@ Get the elastic-labs
 ```bash
 wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.5.2-linux-x86_64.tar.gz
 tar zxvf elasticsearch-7.5.2-linux-x86_64.tar.gz
-cd elasticsearch-7.5.2/
 rm -fr elasticsearch
 mv elasticsearch-7.5.2 elasticsearch
+
 ```
 
 ### STEP 4: Start ES
@@ -52,20 +52,23 @@ _Tip_: You can run it in the background as a daemon by using the -d option
 You should see an output like this
 
     {
-      "name" : "gulBgf7",
-      "cluster_name" : "elasticsearch",
-      "cluster_uuid" : "fMqo6fq-SfqRwRCOKqrq9Q",
-      "version" : {
-        "number" : "6.0.0",
-        "build_hash" : "8f0685b",
-        "build_date" : "2017-11-10T18:41:22.859Z",
-        "build_snapshot" : false,
-        "lucene_version" : "7.0.1",
-        "minimum_wire_compatibility_version" : "5.6.0",
-        "minimum_index_compatibility_version" : "5.0.0"
-      },
-      "tagline" : "You Know, for Search"
-    }
+      "name" : "ip-172-16-0-244",
+    "cluster_name" : "elasticsearch",
+    "cluster_uuid" : "h4Tz5hgsSh-8UNacJ78HfQ",
+    "version" : {
+      "number" : "7.5.2",
+      "build_flavor" : "default",
+      "build_type" : "tar",
+      "build_hash" : "8bec50e1e0ad29dad5653712cf3bb580cd1afcdf",
+      "build_date" : "2020-01-15T12:11:52.313576Z",
+      "build_snapshot" : false,
+      "lucene_version" : "8.3.0",
+      "minimum_wire_compatibility_version" : "6.8.0",
+      "minimum_index_compatibility_version" : "6.0.0-beta1"
+    },
+    "tagline" : "You Know, for Search"
+  }
+
 
 ### STEP 6: Examine the logs.
 
