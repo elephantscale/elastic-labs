@@ -4,10 +4,10 @@ ADDRESS="localhost:9200"
 
 
 # Check that Elasticsearch is running
-curl -s "http://$ADDRESS" 2>&1 > /dev/null
+curl -s "http://localhost:9200" 2>&1 > /dev/null
 if [ $? != 0 ]; then
-    echo "Unable to contact Elasticsearch at $ADDRESS"
-    echo "Please ensure Elasticsearch is running and can be reached at http://$ADDRESS/"
+    echo "Unable to contact Elasticsearch at localhost:9200"
+    echo "Please ensure Elasticsearch is running and can be reached at http://localhost:9200/"
     exit -1
 fi
 
@@ -18,14 +18,14 @@ echo "Press [Enter] to continue."
 read
 
 # Delete the old index, swallow failures if it doesn"t exist
-curl -XDELETE "$ADDRESS/get-together"> /dev/null
+curl -XDELETE "localhost:9200/get-together"> /dev/null
 
 # Create the next index using mapping.json
 echo "Creating "get-together" index..."
-curl -XPUT "$ADDRESS/get-together?include_type_name=true" @$(dirname $0)/mapping.json
+curl -XPUT "localhost:9200/get-together?include_type_name=true" @$(dirname $0)/mapping.json
 
 # Wait for index to become yellow
-curl "$ADDRESS/get-together/_health?wait_for_status=yellow&timeout=10s" > /dev/null
+curl "localhost:9200/get-together/_health?wait_for_status=yellow&timeout=10s" > /dev/null
 echo
 echo "Done creating "get-together" index."
 
@@ -44,7 +44,7 @@ curl -XPOST "localhost:9200/get-together/group/1" -d'{
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/group/2" -d'
+curl -XPOST "localhost:9200/get-together/group/2" -d'
 {
   "name": "Elasticsearch Denver",
   "organizer": "Lee",
@@ -56,7 +56,7 @@ curl -XPOST "$ADDRESS/get-together/group/2" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/group/3" -d'
+curl -XPOST "localhost:9200/get-together/group/3" -d'
 {
   "name": "Elasticsearch San Francisco",
   "organizer": "Mik",
@@ -68,7 +68,7 @@ curl -XPOST "$ADDRESS/get-together/group/3" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/group/4" -d'
+curl -XPOST "localhost:9200/get-together/group/4" -d'
 {
   "name": "Boulder/Denver big data get-together",
   "organizer": "Andy",
@@ -96,7 +96,7 @@ echo "Done indexing groups."
 
 echo "Indexing events..."
 
-curl -XPOST "$ADDRESS/get-together/event/100?parent=1" -d'
+curl -XPOST "localhost:9200/get-together/event/100?parent=1" -d'
 {
   "host": ["Lee", "Troy"],
   "title": "Liberator and Immutant",
@@ -110,7 +110,7 @@ curl -XPOST "$ADDRESS/get-together/event/100?parent=1" -d'
   "reviews": 4
 }'
 echo
-curl -XPOST "$ADDRESS/get-together/event/101?parent=1" -d'
+curl -XPOST "localhost:9200/get-together/event/101?parent=1" -d'
 {
   "host": "Sean",
   "title": "Sunday, Surly Sunday",
@@ -124,7 +124,7 @@ curl -XPOST "$ADDRESS/get-together/event/101?parent=1" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/102?parent=1" -d'
+curl -XPOST "localhost:9200/get-together/event/102?parent=1" -d'
 {
   "host": "Daniel",
   "title": "10 Clojure coding techniques you should know, and project openbike",
@@ -139,7 +139,7 @@ curl -XPOST "$ADDRESS/get-together/event/102?parent=1" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/103?parent=2" -d'
+curl -XPOST "localhost:9200/get-together/event/103?parent=2" -d'
 {
   "host": "Lee",
   "title": "Introduction to Elasticsearch",
@@ -154,7 +154,7 @@ curl -XPOST "$ADDRESS/get-together/event/103?parent=2" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/104?parent=2" -d'
+curl -XPOST "localhost:9200/get-together/event/104?parent=2" -d'
 {
   "host": "Lee",
   "title": "Queries and Filters",
@@ -169,7 +169,7 @@ curl -XPOST "$ADDRESS/get-together/event/104?parent=2" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/105?parent=2" -d'
+curl -XPOST "localhost:9200/get-together/event/105?parent=2" -d'
 {
   "host": "Lee",
   "title": "Elasticsearch and Logstash",
@@ -184,7 +184,7 @@ curl -XPOST "$ADDRESS/get-together/event/105?parent=2" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/106?parent=3" -d'
+curl -XPOST "localhost:9200/get-together/event/106?parent=3" -d'
 {
   "host": "Mik",
   "title": "Social management and monitoring tools",
@@ -199,7 +199,7 @@ curl -XPOST "$ADDRESS/get-together/event/106?parent=3" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/107?parent=3" -d'
+curl -XPOST "localhost:9200/get-together/event/107?parent=3" -d'
 {
   "host": "Mik",
   "title": "Logging and Elasticsearch",
@@ -214,7 +214,7 @@ curl -XPOST "$ADDRESS/get-together/event/107?parent=3" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/108?parent=3" -d'
+curl -XPOST "localhost:9200/get-together/event/108?parent=3" -d'
 {
   "host": "Elyse",
   "title": "Piggyback on Elasticsearch training in San Francisco",
@@ -229,7 +229,7 @@ curl -XPOST "$ADDRESS/get-together/event/108?parent=3" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/109?parent=4" -d'
+curl -XPOST "localhost:9200/get-together/event/109?parent=4" -d'
 {
   "host": "Andy",
   "title": "Hortonworks, the future of Hadoop and big data",
@@ -244,7 +244,7 @@ curl -XPOST "$ADDRESS/get-together/event/109?parent=4" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/110?parent=4" -d'
+curl -XPOST "localhost:9200/get-together/event/110?parent=4" -d'
 {
   "host": "Andy",
   "title": "Big Data and the cloud at Microsoft",
@@ -259,7 +259,7 @@ curl -XPOST "$ADDRESS/get-together/event/110?parent=4" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/111?parent=4" -d'
+curl -XPOST "localhost:9200/get-together/event/111?parent=4" -d'
 {
   "host": "Andy",
   "title": "Moving Hadoop to the mainstream",
@@ -274,7 +274,7 @@ curl -XPOST "$ADDRESS/get-together/event/111?parent=4" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/112?parent=5" -d'
+curl -XPOST "localhost:9200/get-together/event/112?parent=5" -d'
 {
   "host": "Dave Nolan",
   "title": "real-time Elasticsearch",
@@ -289,7 +289,7 @@ curl -XPOST "$ADDRESS/get-together/event/112?parent=5" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/113?parent=5" -d'
+curl -XPOST "localhost:9200/get-together/event/113?parent=5" -d'
 {
   "host": "Dave",
   "title": "Elasticsearch at Rangespan and Exonar",
@@ -304,7 +304,7 @@ curl -XPOST "$ADDRESS/get-together/event/113?parent=5" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/114?parent=5" -d'
+curl -XPOST "localhost:9200/get-together/event/114?parent=5" -d'
 {
   "host": "Yann",
   "title": "Using Hadoop with Elasticsearch",
@@ -322,7 +322,7 @@ echo
 echo "Done indexing events."
 
 # Refresh so data is available
-curl -XPOST "$ADDRESS/get-together/_refresh"
+curl -XPOST "localhost:9200/get-together/_refresh"
 
 echo
 echo "Done indexing data."
@@ -330,7 +330,7 @@ echo
 
 echo
 echo "Creating Templates."
-curl -XPUT "http://$ADDRESS/_template/logging_index_all" -d'
+curl -XPUT "http://localhost:9200/_template/logging_index_all" -d'
 {
     "template" : "logstash-09-*",
     "order" : 1,
@@ -342,7 +342,7 @@ curl -XPUT "http://$ADDRESS/_template/logging_index_all" -d'
 }'
 
 echo
-curl -XPUT "http://$ADDRESS/_template/logging_index" -d'
+curl -XPUT "http://localhost:9200/_template/logging_index" -d'
 {
     "template" : "logstash-*",
     "order" : 0,
@@ -357,8 +357,8 @@ echo "Done Creating Templates."
 
 echo
 echo "Adding Dynamic Mapping"
-curl -XDELETE "http://$ADDRESS/myindex" > /dev/null
-curl -XPUT "http://$ADDRESS/myindex?include_type_name=true" -d'
+curl -XDELETE "http://localhost:9200/myindex" > /dev/null
+curl -XPUT "http://localhost:9200/myindex?include_type_name=true" -d'
 {
     "mappings" : {
         "my_type" : {
@@ -380,11 +380,11 @@ echo "Done Adding Dynamic Mapping"
 
 echo
 echo "Adding Aliases"
-curl -XDELETE "http://$ADDRESS/november_2014_invoices" > /dev/null
-curl -XDELETE "http://$ADDRESS/december_2014_invoices" > /dev/null
-curl -XPUT "http://$ADDRESS/november_2014_invoices?include_type_name=true" -d'{}'
+curl -XDELETE "http://localhost:9200/november_2014_invoices" > /dev/null
+curl -XDELETE "http://localhost:9200/december_2014_invoices" > /dev/null
+curl -XPUT "http://localhost:9200/november_2014_invoices?include_type_name=true" -d'{}'
 echo
-curl -XPUT "http://$ADDRESS/december_2014_invoices?include_type_name=true" -d'
+curl -XPUT "http://localhost:9200/december_2014_invoices?include_type_name=true" -d'
 {
     "mappings" :
     {
@@ -400,7 +400,7 @@ curl -XPUT "http://$ADDRESS/december_2014_invoices?include_type_name=true" -d'
 
 echo
 
-curl -XPOST "http://$ADDRESS/_aliases" -d'
+curl -XPOST "http://localhost:9200/_aliases" -d'
 {
   "actions" : [
     {"add" : {"index" : "november_2014_invoices", "alias" : "2014_invoices"}},
@@ -412,7 +412,7 @@ echo
 echo "Done Adding Aliases"
 
 echo "Adding Filter Alias"
-curl -XPOST "http://$ADDRESS/_aliases" -d'
+curl -XPOST "http://localhost:9200/_aliases" -d'
 {
     "actions" : [
         {
@@ -439,7 +439,7 @@ echo "Done Adding Filter Alias"
 
 echo
 echo "Adding Routing Alias"
-curl -XPOST "http://$ADDRESS/_aliases" -d'
+curl -XPOST "http://localhost:9200/_aliases" -d'
 {
     "actions" : [
         {
