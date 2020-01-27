@@ -36,8 +36,7 @@ echo
 echo "Indexing data..."
 
 echo "Indexing groups..."
-curl -XPOST "$ADDRESS/get-together/group/1?include_type_name=true" -d'
-{
+curl -XPOST "localhost:9200/get-together/group/1" -d'{
   "name": "Denver Clojure",
   "organizer": ["Daniel", "Lee"],
   "description": "Group of Clojure enthusiasts from Denver who want to hack on code together and learn more about Clojure",
@@ -48,7 +47,7 @@ curl -XPOST "$ADDRESS/get-together/group/1?include_type_name=true" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/group/2?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/group/2" -d'
 {
   "name": "Elasticsearch Denver",
   "organizer": "Lee",
@@ -60,7 +59,7 @@ curl -XPOST "$ADDRESS/get-together/group/2?include_type_name=true" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/group/3?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/group/3" -d'
 {
   "name": "Elasticsearch San Francisco",
   "organizer": "Mik",
@@ -72,7 +71,7 @@ curl -XPOST "$ADDRESS/get-together/group/3?include_type_name=true" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/group/4?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/group/4" -d'
 {
   "name": "Boulder/Denver big data get-together",
   "organizer": "Andy",
@@ -84,7 +83,7 @@ curl -XPOST "$ADDRESS/get-together/group/4?include_type_name=true" -d'
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/group/5?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/group/5" -d'
 {
   "name": "Enterprise search London get-together",
   "organizer": "Tyler",
@@ -100,7 +99,7 @@ echo "Done indexing groups."
 
 echo "Indexing events..."
 
-curl -XPOST "$ADDRESS/get-together/event/100?parent=1?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/100?parent=1" -d'
 {
   "host": ["Lee", "Troy"],
   "title": "Liberator and Immutant",
@@ -114,7 +113,7 @@ curl -XPOST "$ADDRESS/get-together/event/100?parent=1?include_type_name=true" -d
   "reviews": 4
 }'
 echo
-curl -XPOST "$ADDRESS/get-together/event/101?parent=1?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/101?parent=1" -d'
 {
   "host": "Sean",
   "title": "Sunday, Surly Sunday",
@@ -128,7 +127,7 @@ curl -XPOST "$ADDRESS/get-together/event/101?parent=1?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/102?parent=1?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/102?parent=1" -d'
 {
   "host": "Daniel",
   "title": "10 Clojure coding techniques you should know, and project openbike",
@@ -143,7 +142,7 @@ curl -XPOST "$ADDRESS/get-together/event/102?parent=1?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/103?parent=2?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/103?parent=2" -d'
 {
   "host": "Lee",
   "title": "Introduction to Elasticsearch",
@@ -158,7 +157,7 @@ curl -XPOST "$ADDRESS/get-together/event/103?parent=2?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/104?parent=2?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/104?parent=2" -d'
 {
   "host": "Lee",
   "title": "Queries and Filters",
@@ -173,7 +172,7 @@ curl -XPOST "$ADDRESS/get-together/event/104?parent=2?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/105?parent=2?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/105?parent=2" -d'
 {
   "host": "Lee",
   "title": "Elasticsearch and Logstash",
@@ -188,7 +187,7 @@ curl -XPOST "$ADDRESS/get-together/event/105?parent=2?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/106?parent=3?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/106?parent=3" -d'
 {
   "host": "Mik",
   "title": "Social management and monitoring tools",
@@ -203,7 +202,7 @@ curl -XPOST "$ADDRESS/get-together/event/106?parent=3?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/107?parent=3?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/107?parent=3" -d'
 {
   "host": "Mik",
   "title": "Logging and Elasticsearch",
@@ -218,7 +217,7 @@ curl -XPOST "$ADDRESS/get-together/event/107?parent=3?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/108?parent=3?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/108?parent=3" -d'
 {
   "host": "Elyse",
   "title": "Piggyback on Elasticsearch training in San Francisco",
@@ -233,7 +232,7 @@ curl -XPOST "$ADDRESS/get-together/event/108?parent=3?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/109?parent=4?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/109?parent=4" -d'
 {
   "host": "Andy",
   "title": "Hortonworks, the future of Hadoop and big data",
@@ -248,7 +247,7 @@ curl -XPOST "$ADDRESS/get-together/event/109?parent=4?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/110?parent=4?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/110?parent=4" -d'
 {
   "host": "Andy",
   "title": "Big Data and the cloud at Microsoft",
@@ -263,7 +262,7 @@ curl -XPOST "$ADDRESS/get-together/event/110?parent=4?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/111?parent=4?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/111?parent=4" -d'
 {
   "host": "Andy",
   "title": "Moving Hadoop to the mainstream",
@@ -278,7 +277,7 @@ curl -XPOST "$ADDRESS/get-together/event/111?parent=4?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/112?parent=5?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/112?parent=5" -d'
 {
   "host": "Dave Nolan",
   "title": "real-time Elasticsearch",
@@ -293,7 +292,7 @@ curl -XPOST "$ADDRESS/get-together/event/112?parent=5?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/113?parent=5?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/113?parent=5" -d'
 {
   "host": "Dave",
   "title": "Elasticsearch at Rangespan and Exonar",
@@ -308,7 +307,7 @@ curl -XPOST "$ADDRESS/get-together/event/113?parent=5?include_type_name=true" -d
 }'
 
 echo
-curl -XPOST "$ADDRESS/get-together/event/114?parent=5?include_type_name=true" -d'
+curl -XPOST "$ADDRESS/get-together/event/114?parent=5" -d'
 {
   "host": "Yann",
   "title": "Using Hadoop with Elasticsearch",
@@ -334,7 +333,7 @@ echo
 
 echo
 echo "Creating Templates."
-curl -XPUT "http://$ADDRESS/_template/logging_index_all?include_type_name=true" -d'
+curl -XPUT "http://$ADDRESS/_template/logging_index_all" -d'
 {
     "template" : "logstash-09-*",
     "order" : 1,
@@ -346,7 +345,7 @@ curl -XPUT "http://$ADDRESS/_template/logging_index_all?include_type_name=true" 
 }'
 
 echo
-curl -XPUT "http://$ADDRESS/_template/logging_index?include_type_name=true" -d'
+curl -XPUT "http://$ADDRESS/_template/logging_index" -d'
 {
     "template" : "logstash-*",
     "order" : 0,
@@ -404,7 +403,7 @@ curl -XPUT "http://$ADDRESS/december_2014_invoices?include_type_name=true" -d'
 
 echo
 
-curl -XPOST "http://$ADDRESS/_aliases?include_type_name=true" -d'
+curl -XPOST "http://$ADDRESS/_aliases" -d'
 {
   "actions" : [
     {"add" : {"index" : "november_2014_invoices", "alias" : "2014_invoices"}},
@@ -416,7 +415,7 @@ echo
 echo "Done Adding Aliases"
 
 echo "Adding Filter Alias"
-curl -XPOST "http://$ADDRESS/_aliases?include_type_name=true" -d'
+curl -XPOST "http://$ADDRESS/_aliases" -d'
 {
     "actions" : [
         {
@@ -443,7 +442,7 @@ echo "Done Adding Filter Alias"
 
 echo
 echo "Adding Routing Alias"
-curl -XPOST "http://$ADDRESS/_aliases?include_type_name=true" -d'
+curl -XPOST "http://$ADDRESS/_aliases" -d'
 {
     "actions" : [
         {

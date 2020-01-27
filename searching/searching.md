@@ -18,7 +18,7 @@ Lab Goals:
 * Return only the name and location fields for the top result.
 
 ```bash
-curl -H"Content-Type: application/json" "localhost:9200/get-together/group/_search?\
+curl "localhost:9200/get-together/group/_search?\
 q=elasticsearch\
 &stored_fields=name,location\
 &size=1\
