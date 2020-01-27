@@ -1,11 +1,11 @@
 # ES install
 
-In this lab we will practice the installation of the Solr server.
+In this lab we will practice the installation of the Elastic server.
 
 
 Lab Goals:
 
-* Install Solr and verify its operation
+* Install Elastic and verify its operation
 * Prepare to use this install for all subsequent labs
 
 ### STEP 1) Login to the server
