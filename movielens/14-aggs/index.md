@@ -2,6 +2,11 @@
 
 In this lab we are going to use aggregates with our indices. 
 
+First check if elasticsearch is stil running.  
+```
+curl 'http://localhost:9200/?pretty'
+```
+
 Let's start by running a query on the `ratings` index and requesting ratings for all movies.
 
 ```bash

@@ -183,13 +183,26 @@ GRANT ALL PRIVILEGES ON *.* TO 'jdbc'@'%';
 FLUSH PRIVILEGES;
 ```
 
-Confirm you can log into mysql as the `jdbc` user
+Confirm you can log into mysql as the `jdbc` user  
+
+First exit
+
+```
+exit
+```
+Then log into new user account 'jdbc'
 
 ```
 mysql -ujdbc -ppassword
 ```
 
+Congrats you have logged in as a new user.
+
 Logstash is a Java application and to connect to MySQL is requires the `jdbc` driver.  Installing this is fairly simple. 
+First exit out of mysql.  
+```
+exit
+```
 
 Download the latest connector and unzip it.
 
@@ -199,6 +212,10 @@ unzip mysql-connector-java-5.1.46.zip
 ```
 
 Now we need to configure Logstash to connect to MySQL. 
+
+```
+sudo vi /etc/logstash/conf.d/logstash.conf
+```
 
 Create a new configuration file for Logstash `/etc/logstash/conf.d/mysql.conf` with the following data.
 ```
