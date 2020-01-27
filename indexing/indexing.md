@@ -22,7 +22,7 @@ Each student is provided their individual server and credentials
 
 ### STEP 3: Practice index create, list, delete
 
-    curl –H 'Content-Type: application/json' -XPUT 'localhost:9200/new-index' 
+    curl   –H "Content-Type: application/json" -XPUT "localhost:9200/new-index?include_type_name=true"
 
     curl -XDELETE 'localhost:9200/new-index'
 
