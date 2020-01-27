@@ -36,7 +36,7 @@ echo
 echo "Indexing data..."
 
 echo "Indexing groups..."
-curl -XPOST "localhost:9200/get-together/group/1" -d'{
+curl -XPOST "$ADDRESS/get-together/group/1" -d'{
   "name": "Denver Clojure",
   "organizer": ["Daniel", "Lee"],
   "description": "Group of Clojure enthusiasts from Denver who want to hack on code together and learn more about Clojure",
