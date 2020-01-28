@@ -5,7 +5,7 @@ In this lab you will be creating a new index, new mappings, and relationships be
 Sometimes you have data that is related. In this example we are going to create a parent/child relationship between films and the franchise they are part of. 
 
 ```
-curl -XPUT 127.0.0.1:9200/series -d'
+curl -XPUT 127.0.0.1:9200/series?include_type_name=true -d'
 {
     "mappings" : {
         "movie": {
