@@ -64,7 +64,7 @@ curl -XDELETE 127.0.0.1:9200/movies
 Now we need to create a new `movies` index with some changes to the way it searches text. 
 
 ```bash
-curl -XPUT 127.0.0.1:9200/movies?include_type_name=true -d'
+curl -XPUT 127.0.0.1:9200/movies -d'
 {
     "mappings" : {
         "movie": {
