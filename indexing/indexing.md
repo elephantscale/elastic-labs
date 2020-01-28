@@ -14,15 +14,10 @@ Each student is provided their individual server and credentials
 (Instructor: use our ubuntu AMI, t2.large or t2.xlarge instances and Elasticsearch security group)
 
 
-Don't forget to set the following alias: (if you have not done so already)
-
-```bash
-alias curl="/usr/bin/curl -H 'Content-type: application/json' "
-```
 
 ### STEP 2: Index one document
 
-    curl -XPUT  "localhost:9200/get-together/group/1 " -d '{
+    curl -XPUT  -H 'Content-type: application/json' "localhost:9200/get-together/group/1 " -d '{
     "name": "Elasticsearch Denver",
     "organizer": "Lee"
     }'
