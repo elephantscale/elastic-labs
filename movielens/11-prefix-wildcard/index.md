@@ -13,7 +13,7 @@ curl -XDELETE 127.0.0.1:9200/movies
 Now that’s complete let’s go ahead and create a new mapping for the `year` field as a `keyword` .
 
 ```bash
-curl -XPUT 127.0.0.1:9200/movies/ -d '
+curl -XPUT 127.0.0.1:9200/movies/?include_type_name=true -d '
 {
     "mappings": {
         "movie":  {
