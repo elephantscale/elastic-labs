@@ -15,7 +15,7 @@ Each student is provided their individual server and credentials
 
 ### STEP 2: Index one document
 
-    curl -XPUT  "localhost:9200/get-together/group/1?include_type_name=true " -d '{
+    curl -XPUT  "localhost:9200/get-together/group/1 " -d '{
     "name": "Elasticsearch Denver",
     "organizer": "Lee"
     }'
