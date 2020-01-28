@@ -214,7 +214,7 @@ unzip mysql-connector-java-5.1.46.zip
 Now we need to configure Logstash to connect to MySQL. 
 
 ```
-sudo vi /etc/logstash/conf.d/logstash.conf
+sudo vi /etc/logstash/conf.d/mysql.conf
 ```
 
 Create a new configuration file for Logstash `/etc/logstash/conf.d/mysql.conf` with the following data.
