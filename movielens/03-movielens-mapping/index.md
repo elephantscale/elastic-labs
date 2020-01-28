@@ -44,7 +44,7 @@ If it is still running you should get a return like below.
 Now we are going to create a new mapping so that Elasticsearch knows how to handle the date in the ‘Year’ field of our CSV file.
 
 ```bash
-curl -H "Content-Type: application/json" -XPUT 127.0.0.1:9200/movies/?include_type_name=true -d '
+curl -H "Content-Type: application/json" -XPUT 127.0.0.1:9200/movies/ -d '
 {
     "mappings": {
         "movie": {
