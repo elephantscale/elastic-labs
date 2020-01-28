@@ -2,6 +2,8 @@
 
 ADDRESS=$1
 
+alias curl="/usr/bin/curl -H 'Content-type: application/json' "
+
 if [ -z $ADDRESS ]; then
   ADDRESS="localhost:9200"
 fi
