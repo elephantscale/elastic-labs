@@ -1,11 +1,11 @@
 # ES searching
 
-In this lab we will practice indexing operations
+In this lab we will practice searching
 
 
 Lab Goals:
 
-*
+* Learning about different search options
 
 ### STEP 1: Prepare data for searches
 ```bash
@@ -51,7 +51,7 @@ Will the search below fail?
 
 Can you fix it?
 
-(Hint) Use `ignore_unavailable`
+(Hint) Use `ignore_unavailable=true`
 
 We will have to create a join to do so which we will look at later.
 
