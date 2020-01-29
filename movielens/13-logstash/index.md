@@ -1,5 +1,5 @@
 # Elastic Stack Lab13
-In this lab we are going to install and configure Logstash. 
+In this lab we are going to install and configure Logstash.
 
 
 Run the following if you have not done so already
@@ -15,7 +15,7 @@ sudo apt-get update
 Run the following to install Logstash.  
 ```
 sudo apt-get update
-sudo apt-get install -y logstash 
+sudo apt-get install -y logstash
 ```
 
 After it's installed we have to configure it.
@@ -55,30 +55,30 @@ output {
 }
 ```
 
-We need to have logs that can be imported and manipulated by Logstash. Let's go ahead and download an Apache access log to use. 
+We need to have logs that can be imported and manipulated by Logstash. Let's go ahead and download an Apache access log to use.
 ```
 wget http://bit.ly/logstash-apache -O access_log
 ```
 
-Now that we have installed and configured Logstash let's go ahead and start it up. 
+Now that we have installed and configured Logstash let's go ahead and start it up.
 
 ```
 cd /usr/share/logstash/
 sudo bin/logstash -f /etc/logstash/conf.d/logstash.conf
 ```
 
-After starting Logstash wait a couple seconds and you should see it start to index all of the data from our `access_log`.  All of this data is being imported into our Elasticsearch index. 
+After starting Logstash wait a couple seconds and you should see it start to index all of the data from our `access_log`.  All of this data is being imported into our Elasticsearch index.
 
-Logstash normally runs as a daemon monitoring for new data from the `input` systems and then it sends that data over to the `output` systems. 
+Logstash normally runs as a daemon monitoring for new data from the `input` systems and then it sends that data over to the `output` systems.
 
-Confirm the access log data was imported into Elasticsearch successfully. 
+Confirm the access log data was imported into Elasticsearch successfully.
 
-List all the indices 
+List all the indices
 ```
 curl -XGET 127.0.0.1:9200/_cat/indices?v
 ```
 
-You should see quite a few new indices with data for each day in our log file. 
+You should see quite a few new indices with data for each day in our log file.
 
 ```
 health status index               uuid                   pri rep docs.count docs.deleted store.size pri.store.size
@@ -88,22 +88,22 @@ yellow open   logstash-2015.05.20 w_T-y-3OQNGwXhe0CzTbuQ   5   1       4750     
 yellow open   ratings             jWzRWMcNSbS3H-hz0CyPaQ   5   1     100004            0     14.4mb         14.4mb
 ```
 
-Look at one of the indices 
+Look at one of the indices
 ```
 curl -XGET '127.0.0.1:9200/logstash-2017.05.02/_search?pretty'
 ```
 
-Notice that all of the data was imported and fields created and indexed successfully. 
+Notice that all of the data was imported and fields created and indexed successfully.
 
-## Logstash - MySQL 
+## Logstash - MySQL
 
 Install MySQL first
 ```
-sudo apt-get update 
+sudo apt-get update
 sudo apt-get install -y mysql-server
 ```
 
-Now we need to import some data into MySQL. 
+Now we need to import some data into MySQL.
 
 Start by changing back to the Ubuntu home directory
 ```
@@ -113,17 +113,17 @@ cd ~
 Download the movie data
 ```
 wget http://files.grouplens.org/datasets/movielens/ml-100k.zip
-unzip ml-100k.zip 
+unzip ml-100k.zip
 ```
 
-Now look at the format of `ml-100k/u.item` and you'll see it's a pipe delimited file. 
+Now look at the format of `ml-100k/u.item` and you'll see it's a pipe delimited file.
 
-Log into MySQL 
+Log into MySQL
 ```
 sudo mysql -uroot -ppassword
 ```
 
-Create a new database 
+Create a new database
 ```
 CREATE DATABASE movielens;
 ```
@@ -131,21 +131,21 @@ CREATE DATABASE movielens;
 Create a new table
 ```
 CREATE TABLE movielens.movies (
--> movieID INT PRIMARY KEY NOT NULL,
--> title TEXT,
--> releaseDate DATE
--> );
+ movieID INT PRIMARY KEY NOT NULL,
+ title TEXT,
+ releaseDate DATE
+ );
 ```
 
 
-Now load the data into the database 
+Now load the data into the database
 ```
 LOAD DATA LOCAL INFILE 'ml-100k/u.item' INTO TABLE movielens.movies FIELDS TERMINATED BY '|'
--> (movieID, title, @var3)
--> set releaseDate = STR_TO_DATE(@var3, '%d-%M-%Y');
+ (movieID, title, @var3)
+ set releaseDate = STR_TO_DATE(@var3, '%d-%M-%Y');
 ```
 
-Now if the above commands were all successful you should be able to run the following to confirm all the records were imported. 
+Now if the above commands were all successful you should be able to run the following to confirm all the records were imported.
 ```
 SELECT * FROM movielens.movies WHERE title like 'Star%';
 ```
@@ -176,7 +176,7 @@ You should get back something similar to
 
 Now we need to create a new `jdbc` user to connect to MySQL
 
-Run the following in MySQL 
+Run the following in MySQL
 ```
 CREATE USER 'jdbc'@'%' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON *.* TO 'jdbc'@'%';
@@ -198,7 +198,7 @@ mysql -ujdbc -ppassword
 
 Congrats you have logged in as a new user.
 
-Logstash is a Java application and to connect to MySQL is requires the `jdbc` driver.  Installing this is fairly simple. 
+Logstash is a Java application and to connect to MySQL is requires the `jdbc` driver.  Installing this is fairly simple.
 First exit out of mysql.  
 ```
 exit
@@ -211,7 +211,7 @@ wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.46
 unzip mysql-connector-java-5.1.46.zip
 ```
 
-Now we need to configure Logstash to connect to MySQL. 
+Now we need to configure Logstash to connect to MySQL.
 
 ```
 sudo vi /etc/logstash/conf.d/mysql.conf
@@ -240,7 +240,7 @@ output {
 }
 ```
 
-Now we need to restart Logstash and pass it the new mysql config file. 
+Now we need to restart Logstash and pass it the new mysql config file.
 
 ```
 cd /usr/share/logstash/
@@ -248,10 +248,10 @@ sudo bin/logstash -f /etc/logstash/conf.d/mysql.conf
 ```
 
 
-Now let's confirm the data was imported correctly. 
+Now let's confirm the data was imported correctly.
 
 ```
 curl -XGET '127.0.0.1:9200/movielens-sql/_search?q=title:Star&pretty'
 ```
 
-# Lab Complete 
+# Lab Complete
