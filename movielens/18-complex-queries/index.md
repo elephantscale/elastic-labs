@@ -1,15 +1,21 @@
 # Elastic Stack Lab 18
 
-In this lab we will be using some more advanced techniques to query our data. 
+In this lab we will be using some more advanced techniques to query our data.
 
-**NOTE:** The following commands will be run in the Kibana console. 
+**NOTE:** The following commands will be run in the Kibana console.
+
+## Open Kibana console
+
+Go to http://localhost:5601/ in your browser.
+
+Scroll down and under **Manage and Administer Elastic Slack** click **Console**
 
 ## Setup
 First let's start by creating a new index for our books and specifying it should have 1 shard
 ```
 PUT /bookdb_index
     { "settings": { "number_of_shards": 1 }}
-``` 
+```
 
 Now we need to insert some data
 ```
@@ -48,12 +54,12 @@ POST /bookdb_index/book/_search
   "query": {
     "bool": {
       "must": {
-        "bool" : { 
+        "bool" : {
           "should": [
             { "match": { "title": "Elasticsearch" }},
-            { "match": { "title": "Solr" }} 
+            { "match": { "title": "Solr" }}
           ],
-          "must": { "match": { "authors": "clinton gormely" }} 
+          "must": { "match": { "authors": "clinton gormely" }}
         }
       },
       "must_not": { "match": {"authors": "radu gheorge" }}
@@ -206,7 +212,7 @@ POST /bookdb_index/book/_search
     ]
 }
 ```
-**NOTE:** In ES6, to sort or aggregate by a text field, like a title, for example, you would need to enable fielddata on that field. 
+**NOTE:** In ES6, to sort or aggregate by a text field, like a title, for example, you would need to enable fielddata on that field.
 
 ## Range Query
 Another structured query example is the range query. In this example, we search for books published in 2015.
