@@ -61,7 +61,7 @@ curl -XDELETE 127.0.0.1:9200/movies
 ```
 
 ```bash
-curl -XPUT 127.0.0.1:9200/movies -d '
+curl -XPUT 127.0.0.1:9200/movies?include_type_name=true -d '
 {
     "mappings" : {
         "movie" : {

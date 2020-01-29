@@ -10,7 +10,7 @@ Download and create the mapping
 
 ```
 wget http://bit.ly/es-shakes-mapping -O shakes-mapping.json
-curl -XPUT 127.0.0.1:9200/shakespeare?nclude_type_name=true --data-binary @shakes-mapping.json
+curl -XPUT 127.0.0.1:9200/shakespeare?include_type_name=true --data-binary @shakes-mapping.json
 ```
 Download the data
 

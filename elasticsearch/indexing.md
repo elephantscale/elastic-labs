@@ -5,7 +5,7 @@ In this lab we will practice indexing operations
 
 Lab Goals:
 
-* Open an index.
+*
 
 ### STEP 1: Login to the server
 
@@ -14,9 +14,14 @@ Each student is provided their individual server and credentials
 (Instructor: use our ubuntu AMI, t2.large or t2.xlarge instances and Elasticsearch security group)
 
 
-### Step 2: Make sure you don't already have the index by deleting it
+You can set the following alias: (if you have not done so already)
 
-Let's make sure we don't already have an index called get-together. TO do this. we will try to delete it.  If it does *not* already exist, we will get an error. 
+```bash
+alias curl="/usr/bin/curl -H 'Content-type: application/json' "
+```
+
+
+Let's make sure we don't already have an index called get-together. TO do this. we will try to delete it.  If it does *not* already exist, we will get an error.
 But that is fine.
 
 
@@ -39,7 +44,9 @@ Again, if the index does *not* exist, then you will get an error that says it is
 
 
 
-### STEP 2: Index one document
+
+### STEP 3: Index one document
+
 
 All put requests in elastic require a content type, usually json. That means adding this to all PUT requests like this:
 
@@ -54,7 +61,7 @@ This is a bit of a hassle, so feel free to make an alias like this:
 alias curl="/usr/bin/curl -H 'Content-type: application/json' "
 ```
 
-However if you do make the alias, you don't want to separately postpend `-H 'Content-type: application/json'` because it will then say that you have *two* content headers, which isn't allowed. 
+However if you do make the alias, you don't want to separately postpend `-H 'Content-type: application/json'` because it will then say that you have *two* content headers, which isn't allowed.
 Watch out for that.
 
 
@@ -87,4 +94,4 @@ If that doesn't work, you may have the alias set in which case you can try this:
 
 ### STEP 4: List mapping
 
-    curl 'localhost:9200/get-together/_mapping/group?pretty'
+    curl 'localhost:9200/get-together/_mapping?pretty'
