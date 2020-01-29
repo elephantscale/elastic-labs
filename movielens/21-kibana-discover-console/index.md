@@ -2,13 +2,40 @@
 In this lab we are going to use our movielens data set with Kibana.
 
 
-### Loading movie data set.
-You should have the moremovies.json already lets load it into elasticsearch through it's API.
-
+### Loading moremovies data set.
+Let's delete the previous movie index and start fresh if there is no movie index skip this step.
+```  
+curl -XDELETE 127.0.0.1:9200/shakespeare
 ```
-curl -XPUT 127.0.0.1:9200/_bulk?pretty --data-binary @movies.json
+
+You should have the moremovies.json already from doing the python lab lets load it into elasticsearch through it's API.
+```
+curl -XPUT 127.0.0.1:9200/_bulk?pretty --data-binary @moremovies.json
+```
+### Moremovies data set
+If not then folow these steps.  If you already have the moremovies.json then move to next step and **Start Kibana**
+
+Now let's download the MovieLens data.
+```bash
+wget http://files.grouplens.org/datasets/movielens/ml-latest-small.zip
 ```
 
+After downloading we just need to unzip
+```bash
+unzip ml-latest-small.zip
+```
+
+Now let's download the `Python` script we'll be using for manipulating and importing the movie data.
+```bash
+wget http://bit.ly/es-python-import -O MoviesToJson.py
+```
+
+The `Python` script opens up the movies CSV file, loads the data into a dictionary and then writes out a new output file with the fields needed for importing.
+
+Now let's run the script to convert the `movies.csv` to a `JSON` format.
+```bash
+python3 MoviesToJson.py > moremovies.json
+```
 ### Start Kibana
 
 Once data set is loaded go to http://localhost:5601/ in your browser.
@@ -31,13 +58,15 @@ Once that's complete you should see the following screen:
 
 Click on the discover icon that looks like a compass on the left to explore the movies index.
 
+<img src="../15-kibana/index/kibana-4.png  " style="max-width:100%;border-width:3px;  border-style: solid;" />
+
 In the available fields click on  **genre**
 What are the top 5 genre's?
 
 #### Kibana Query Language
-Kimbana's query language includes scripted filed support and a simplified, easier to use syntax.  
+Kibana's query language includes scripted field support and a simplified, easier to use syntax.  
 
-Let's make a simple Query using the Kimbana Query Language.
+Let's make a simple Query using the Kibana Query Language.
 
 Type year in the query bar.  
 You will notice that a drop down with attribute to that field will show.  
