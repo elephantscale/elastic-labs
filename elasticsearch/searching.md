@@ -1,11 +1,11 @@
 # ES searching
 
-In this lab we will practice indexing operations
+In this lab we will practice searching
 
 
 Lab Goals:
 
-*
+* Learning about different search options
 
 ### STEP 1: Prepare data for searches
 ```bash
