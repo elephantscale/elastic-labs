@@ -60,7 +60,7 @@ stdout { codec => rubydebug }
 We can now test our configuration from the logstash directory.
 ```bash
 cd ~logstash/
-bin/logstash -f logstash.conf --config.test_and_exit
+sudo bin/logstash -f logstash.conf --config.test_and_exit
 ```
 
 ## Test new index
