@@ -12,7 +12,7 @@ curl -O https://download.elastic.co/demos/kibana/gettingstarted/8.x/logs.jsonl.g
 If you don't have the shakespeare dataset simply download here.  
 
 ```
-wget http://bit.ly/es-shakes-mapping -O shakes-mapping.json
+wget http://bit.ly/es-shakes-data -O shakespeare_6.0.json
 ```
 
 Two of the datasets are compressed lets uncompress them.
@@ -38,7 +38,8 @@ You should see the following structure.
 ```
 Try it with the accounts.json.
 
-Before we setup mapping let's delete the shakespeare index.
+Before we setup mapping let's delete the shakespeare index if you have it set already.  
+
 ```
 curl -XDELETE 127.0.0.1:9200/shakespeare
 ```
@@ -154,7 +155,7 @@ curl -XPOST 'localhost:9200/_bulk?pretty' --data-binary @logs.jsonl
 If you haven't loaded the shakespeare data set yet do it now. Skip this if you have it already preloaded.
 
 ```
-curl -XPOST 'localhost:9200/shakespeare/_bulk?pretty' --data-binary @shakespeare.json
+curl -XPOST 'localhost:9200/shakespeare/_bulk?pretty' --data-binary @shakespeare_6.0.json
 ```
 
 Verify if successful you should see the index's you made.
@@ -310,10 +311,9 @@ Notice how the individual play names show up as whole phrases, instead of broken
 
  6.  Save this chart with the name *Bar_example*.
 
- Markdownedit
+#### Create a Markdown visualization.
 Create a Markdown widget to add formatted text to your dashboard.
 
-#### Create a Markdown visualization.
 1.  Click on **Visualize** on the top left and then click **Create Visualization**  then select **Markdown**
 
 2.  Copy the following text into the text box.
@@ -322,3 +322,100 @@ Create a Markdown widget to add formatted text to your dashboard.
 The Markdown widget uses **markdown** syntax.
 > Blockquotes in Markdown use the > character.
 ```
+
+3.  Click Apply changes **Play icon** button.
+ - The Markdown renders in the preview pane.
+
+![](index/kibana-dash-17.png)
+
+ 4. Save this visualization with the name *Markdown_example*.
+
+ #### Map
+Using Elastic Maps, you can visualize geographic information in the log file sample data.
+
+1.  Click **Maps** in the New Visualization menu to create a Map.
+
+![](index/kibana-dash-18.png)
+
+2.  Set the time.
+ - In the time filter, click **Show dates**.
+ - Click the start date, then *Absolute*.
+ - Set the **Start date** to *May 18, 2015*.
+ - In the time filter, click **now**, then **Absolute**.
+ - Set the **End date** to *May 20, 2015*.
+ - Click **Update**
+
+![](index/kibana-dash-19.png)
+
+3. Map the geo coordinates from the log files.
+
+ - Click **Add layer**.
+ - Click the **Grid aggregation** data source.
+ - Set **Index pattern** to **logstash**.
+ - Click the **Add layer** button.
+
+![](index/kibana-dash-20.png)
+
+4.  Set the layer style.
+ - Scroll down till you find **layer style**.
+ - For **Fill color**, select the yellow to red color ramp.
+ - For **Border color**, select white.
+ - Click **Save & close**.
+
+ ![](index/kibana-dash-21.png)
+
+ Zoom in to focus on the USA map.  It should look like this.  
+
+ ![](index/kibana-dash-22.png)
+
+ 5.  Navigate the map by clicking and dragging. Use the controls on the left to zoom the map and set filters.
+
+6.  Save this map with the name Map_example.
+
+#### Dashboard
+
+A dashboard is a collection of visualizations that you can arrange and share. You’ll build a dashboard that contains the visualizations and map that you saved during this tutorial.
+
+1.  Open Dashboard there will be an icon on the left you can click.  
+
+ ![](index/kibana-dash-23.png)
+
+2. On the Dashboard overview page, click **Create new dashboard**.
+
+ ![](index/kibana-dash-24.png)
+
+3.  Set the time filter to *May 18, 2015* to *May 20, 2015*.
+
+ ![](index/kibana-dash-25.png)
+
+4.  Click **Add** in the menu bar.
+Add **Bar_example**, **Map_example**, **Markdown_example**, and **Pie_example**.
+
+ ![](index/kibana-dash-26.png)
+
+Your sample dashboard should look like this:
+
+  ![](index/kibana-dash-27.png)
+
+5.  Try out the editing controls.
+
+You can rearrange the visualizations by clicking a the header of a visualization and dragging. The gear icon in the top right of a visualization displays controls for editing and deleting the visualization. A resize control is on the lower right.
+
+Try editing the markdown to "This is a FINISHED tutorial dashboard!"  Make sure to apply changes and save when done.  To see dashboard again just click the dashboard icon on the left.  
+
+6.  Save your dashboard.
+
+#### Inspect the data
+
+Seeing visualizations of your data is great, but sometimes you need to look at the actual data to understand what’s really going on. You can inspect the data behind any visualization and view the Elasticsearch query used to retrieve it.
+
+1.  In the dashboard, hover the pointer over the pie chart, and then click the *gears icon** in the upper right.
+2.  From the Options menu, select Inspect.
+
+  ![](index/kibana-dash-28.png)
+
+3.  To look at the query used to fetch the data for the visualization, select **View > Requests** in the upper right of the Inspect pane.  Here you can get statistics of the requests made and other info.  
+
+  ![](index/kibana-dash-29.png)
+
+There you have it you have a full functional Kibana Dashboard.  Play around with it and maybe import your own data to see what you can find.
