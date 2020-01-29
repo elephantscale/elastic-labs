@@ -17,7 +17,10 @@ cd /etc/logstash/
 ```
 We will edit our logstash config file to allow for ip logging.
 
+If the configuration file does not exist in that location you will need to create it
+
 ```bash
+sudo touch /etc/logstash/conf.d/logstash.conf
 sudo vi /etc/logstash/conf.d/logstash.conf
 ```
 
@@ -57,6 +60,14 @@ stdout { codec => rubydebug }
     }
 ```
 
+Verify that your logstash.yml file is in the /etc/logstash/ directory
+
+If you do not see it in that directory, you will need to copy it over. For instance if it is in ~logstash/ do the following:
+
+```bash
+cd ~logstash/
+sudo cp logstash.yml /etc/logstash/
+```
 We can now test our configuration from the logstash directory.
 ```bash
 cd ~logstash/
