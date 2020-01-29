@@ -78,7 +78,7 @@ POST /_sql?format=text/plain
 #Shorter syntax with limit
 POST /_sql?format=txt
 {
-  "query":"select title,year From company limit 10"
+  "query":"select title,year From movies limit 10"
 }
 
 ```
