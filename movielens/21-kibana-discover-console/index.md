@@ -64,9 +64,13 @@ In the available fields click on  **genre**
 What are the top 5 genre's?
 
 #### Kibana Query Language
+<<<<<<< HEAD
 Kimbana's query language includes scripted field support and a simplified, easier to use syntax.  
+=======
+Kibana's query language includes scripted filed support and a simplified, easier to use syntax.  
+>>>>>>> 4d4989f2d418ab0dbeb7b0e407345d33676935e3
 
-Let's make a simple Query using the Kimbana Query Language.
+Let's make a simple Query using the Kibana Query Language.
 
 Type year in the query bar.  
 You will notice that a drop down with attribute to that field will show.  
