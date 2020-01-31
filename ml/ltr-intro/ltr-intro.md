@@ -39,7 +39,7 @@ bin/elasticsearch -d
 ### Step 3: Get Dataset and ranking library
 
 ```bash
-cd $HOME/elastic-labs/ml/
+cd $HOME/elastic-labs/ml/ltr-intro
 wget  http://es-learn-to-rank.labs.o19s.com/tmdb.json
 wget  http://es-learn-to-rank.labs.o19s.com/RankLibPlus-0.1.0.jar
 ```
@@ -76,6 +76,11 @@ Go ahead and use CURL commands to see the mappings for your new index.
 
 Create and upload features (load_features.py)
 
+```bash
+python load_features.py
+```
+
+
 A "feature" in ES LTR corresponds to an Elasticsearch query. The score yielded by the query is used to train and evaluate the model. For example, if you feel that a TF\*IDF title score corresponds to higher relevance, then that's a feature you'd want to train on! Other features might include how old a movie is, the number of keywords in a query, or whatever else you suspect might correlate to your user's sense of relevance.
 
 If you examine [load_features.py](load_features.py) you'll see how we create features. We first initialize the default feature store (`PUT /_ltr`). We create a feature set (`POST /_ltr/_featureset/movie_features`). Now we have a place to create features for both logging & use by our models!
@@ -111,7 +116,12 @@ You'll notice we bastardize this syntax to add comments identifying the keywords
 
 You saw above how we created features, the next step is to log features for each judgment 3-tuple. This code is in [collect_features.py](collect_features.py). Logging features can be done in several different contexts. Of course, in a production system, you may wish to log features as users search. In other contexts, you may have a hand-created judgment list (as we do) and wish to simply ask Elasticsearch Learning to Rank for feature values for query/document pairs.
 
-Is [collect_features.py](collect_features.py), you'll see an `sltr` query is included. This query points to a featureSet, not a model. So it does not influence the score. We filter down to needed document ids for each keyword and allow this `sltr` query to run.
+In [collect_features.py](collect_features.py), you'll see an `sltr` query is included. This query points to a featureSet, not a model. So it does not influence the score. We filter down to needed document ids for each keyword and allow this `sltr` query to run.
+
+```bash
+python collect_features.py
+```
+
 
 You'll also notice an `ext` component in the request. This search extension is part of the Elasticsearch Learning to Rank plugin and allows you to configure feature logging. You'll noticed it refers to the query name of `sltr`, allowing it to pluck out the `sltr` query and perform logging associated with the feature set.
 
