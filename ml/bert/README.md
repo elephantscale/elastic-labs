@@ -153,6 +153,14 @@ $ python example/create_index.py --index_file=example/index.json --index_name=jo
 
 ### 5. Create documents
 
+First you need to install a package:
+
+```bash
+pip install bert_serving_client==1.9.8
+```
+
+
+
 Once you created an index, you’re ready to index some document. The point here is to convert your document into a vector using BERT. The resulting vector is stored in the `text_vector` field. Let`s convert your data into a JSON document:
 
 ```bash
