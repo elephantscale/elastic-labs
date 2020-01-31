@@ -100,7 +100,9 @@ web_1            |  * Debug mode: off
 web_1            |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 ```
 
-You just need to let this one run.
+You just need to let this one run.  
+
+If you are done, or need to restart, then hit control-c
 
 Open up a new ssh window to the same machine, as we have some more steps..
 
@@ -202,11 +204,11 @@ $ python example/index_documents.py
 
 Go to <http://127.0.0.1:5000>.
 
-Type in a search query.
+Type in a search query. (some examples would be "sales" or "manager")
 
 You should get "lorem ipsum" results.
 
-Ok! so it worked. so now hat?
+Ok! so it worked. so now what?
 
 ### 8. Index your own Data
 
@@ -246,7 +248,26 @@ Create an index with one of hte previous datasets we've used e.g. Movielens)
 python example/create_index.py --index_file=exammple/index.json --index_name=<YOURINDEXNAMEHERE>
 ```
 
+You must modify the file `example/create_documents.py` to use your fields rather than the `title` and `description` fileds from he sample data.
+
+Now call create documents with your newly modified python script
+
+```bash
+ python example/create_documents.py --data=example/YOUR --index_name=YOURINDEXNAME
+```
+
+This will create a new documents.jsonl file.  Take a look at the file.
+
 ### 9. Add Documents to your new index
 ```bash
 python example/index_documents.py
 ```
+
+### 10. Now do a new set of searches 
+
+Go to <http://127.0.0.1:5000>.
+
+Type in a new search query appropriate for your data.
+
+Go back to the other window to watch for any exceptions
+
