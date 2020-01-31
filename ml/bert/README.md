@@ -161,6 +161,7 @@ python example/create_index.py --index_file=example/index.json --index_name=jobs
 First you need to install a package:
 
 ```bash
+pip install elasticsearch # if you have not done so already
 pip install bert_serving_client==1.9.8
 ```
 
