@@ -121,7 +121,10 @@ You can use the create index API to add a new index to an Elasticsearch cluster.
 For example, if you want to create `jobsearch` index with `title`, `text` and `text_vector` fields, you can create the index by the following command:
 
 ```bash
-$ python example/create_index.py --index_file=example/index.json --index_name=jobsearch
+python example/create_index.py --index_file=example/index.json --index_name=jobsearch
+```
+
+```console
 # index.json
 {
   "settings": {
@@ -164,7 +167,10 @@ pip install bert_serving_client==1.9.8
 Once you created an index, you’re ready to index some document. The point here is to convert your document into a vector using BERT. The resulting vector is stored in the `text_vector` field. Let`s convert your data into a JSON document:
 
 ```bash
-$ python example/create_documents.py --data=example/example.csv --index_name=jobsearch
+ python example/create_documents.py --data=example/example.csv --index_name=jobsearch
+```
+
+```console
 # example/example.csv
 "Title","Description"
 "Saleswoman","lorem ipsum"
@@ -195,3 +201,52 @@ $ python example/index_documents.py
 ### 7. Open browser
 
 Go to <http://127.0.0.1:5000>.
+
+Type in a search query.
+
+You should get "lorem ipsum" results.
+
+Ok! so it worked. so now hat?
+
+### 8. Index your own Data
+
+Create a file index.json
+
+```json
+{
+  "settings": {
+    "number_of_shards": 2,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "dynamic": "true",
+    "_source": {
+      "enabled": "true"
+    },
+    "properties": {
+      "title": {
+        "type": "text"
+      },
+      "text": {
+        "type": "text"
+      },
+      "text_vector": {
+        "type": "dense_vector",
+        "dims": 768
+      }
+    }
+  }
+}
+
+```
+
+Create an index with one of hte previous datasets we've used e.g. Movielens)
+
+```bash
+python example/create_index.py --index_file=exammple/index.json --index_name=<YOURINDEXNAMEHERE>
+```
+
+### 9. Add Documents to your new index
+```bash
+python example/index_documents.py
+```
