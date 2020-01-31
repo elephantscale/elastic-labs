@@ -2,17 +2,19 @@
 
 In this lab we are going to install Filebeat and a couple plugins to play around with.
 
-Let's start by installing Filebeat
+Let's start by downloading and installing Filebeat. In the virtual machine, open a browser and navigate to https://www.elastic.co/downloads/beats/filebeat. Download the Linux 64-BIT version.
+
+Now put it in your home directory and we will unzip it.
 ```
-sudo apt-get update && sudo apt-get -y install filebeat
+tar zxvf filebeat-7.5.2-linux-x86_64.tar.gz
 ```
 
 Now let's go configure Filebeat.
 ```
-cd /usr/share/filebeat/bin
+cd filebeat-7.5.2-linux-x86_64
 sudo filebeat setup --dashboards
-sudo mv /etc/filebeat/modules.d/apache.yml.disabled /etc/filebeat/modules.d/apache.yml
-sudo vi /etc/filebeat/modules.d/apache.yml  
+sudo mv filebeat-7.5.2-linux-x86_64/modules.d/apache.yml.disabled filebeat-7.5.2-linux-x86_64/modules.d/apache.yml
+sudo vi filebeat-7.5.2-linux-x86_64/modules.d/apache.yml  
 ```
 ##Configuring Filebeat
 
@@ -36,7 +38,7 @@ cp ~/access_log ~/logs/
 Now go back to the filebeat directory to configure the filebeat.yml file:
 (If it is not in this location, you will have to find it)
 ```
-cd /etc/filebeat/
+cd filebeat-7.5.2-linux-x86_64
 sudo vi filebeat.yml
 ```
 There will be a few things we have to edit:
