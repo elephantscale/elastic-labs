@@ -64,11 +64,20 @@ unzip cased_L-12_H-768_A-12.zip
 
 ### Step 5: Run Docker Compose
 
-First you need to stop
+First you need to stop elastic if it is running:
+
+```bash
+
+$ jps
+# FIND PID
+$ kill YOURPID
+```
+
+Now run `docker-compose`
+
 
 ```bash
 docker-compose up 
-
 ```
 
 
@@ -113,6 +122,8 @@ Open up a new ssh window to the same machine, as we have some more steps..
 
 
 ## 4. Create index
+
+On your second ssh window verify that you have the 3 services runnign by saying `docker ps`
 
 You can use the create index API to add a new index to an Elasticsearch cluster. When creating an index, you can specify the following:
 
@@ -245,7 +256,10 @@ Create a file index.json
 
 Create an index with one of hte previous datasets we've used e.g. Movielens)
 
+
+
 ```bash
+export INDEX_NAME=YOURNEWINDEXNAME
 python example/create_index.py --index_file=exammple/index.json --index_name=<YOURINDEXNAMEHERE>
 ```
 
