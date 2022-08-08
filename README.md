@@ -4,7 +4,7 @@ The preparation steps in this 'README' apply to all subsequent labs.
 
 ## Lab Goals:
 
-1. Prepare the working environment for the Solr labs.
+1. Prepare the working environment for the Elastic labs.
 2. Make the necessary steps, so that the students won't have to repeat them in each and every lab.
 
 The markdown format removes many characters, like ampersand (&) which are important for the 
