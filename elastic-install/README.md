@@ -94,6 +94,11 @@ bin/elasticsearch-create-enrollment-token --scope kibana
 ```
 
 * Start Kibana
+* If you want to keep it running, type
+```shell
+screen
+```
+
 * Use one of the two commands below
 
 ```shell
