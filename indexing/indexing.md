@@ -7,37 +7,45 @@ Lab Goals:
 
 * Open an index.
 
-### STEP 1: Login to the server
+### STEP 1: Login to Kibana
 
-Each student is provided their individual server and credentials
+* Open Elastic-DevTools
 
-(Instructor: use our ubuntu AMI, t2.large or t2.xlarge instances and Elasticsearch security group)
+![](../images/05.png)
 
+* Display cluster health
+
+```shell
+GET _cluster/health
+```
+![](../images/07.png)
 
 ### Step 2: Make sure you don't already have the index by deleting it
 
-Let's make sure we don't already have an index called get-together. TO do this. we will try to delete it.  If it does *not* already exist, we will get an error. 
+Let's make sure we don't already have an index called get-together. To do this. we will try to delete it.  If it does *not* already exist, we will get an error. 
 But that is fine.
 
+* Try to delete the index, then create it, then read it.
+* 
+```bash
+DELETE get-together
+```
 
 ```bash
-curl -XDELETE 'localhost:9200/get-together'
+PUT get-together
+```
+
+```bash
+GET get-together
 ```
 
 If it **does** exist, you will get an acknowledgment like this;
 
-```json
-{"acknowledged":true}
-```
+![](../images/04.png)
 
 Again, if the index does *not* exist, then you will get an error that says it is not found, which is fine.
 
-```json
-{"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no such index [get-together]","resource.type":"index_or_alias","resource.id":"get-together","index_uuid":"_na_","index":"get-together"}],"type":"index_not_found_exception","reason":"no such index [get-together]","resource.type":"index_or_alias","resource.id":"get-together","index_uuid":"_na_","index":"get-together"},"status":404}
-```
-
-
-
+![](../images/06.png)
 
 ### STEP 2: Index one document
 
@@ -54,7 +62,7 @@ This is a bit of a hassle, so feel free to make an alias like this:
 alias curl="/usr/bin/curl -H 'Content-type: application/json' "
 ```
 
-However if you do make the alias, you don't want to separately postpend `-H 'Content-type: application/json'` because it will then say that you have *two* content headers, which isn't allowed. 
+However, if you do make the alias, you don't want to separately postpend `-H 'Content-type: application/json'` because it will then say that you have *two* content headers, which isn't allowed. 
 Watch out for that.
 
 
