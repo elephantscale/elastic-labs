@@ -61,3 +61,17 @@ GET my-index/_mapping
 * Now you can examine the auto-generated mapping
 
 ![](../images/15.png)
+
+
+### Step 3: Index a document with problematic mapping
+
+```text
+POST my-index/_doc/
+{
+  "year": "2021",
+  "city": "Perth",
+  "country": "Australia",
+  "population_M": "1.95 million"
+}
+```
+
