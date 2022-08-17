@@ -5,7 +5,7 @@ In this lab we will practice indexing operations
 
 Lab Goals:
 
-* Open an index.
+* CRUD for indices, index documents.
 
 ### STEP 1: Login to Kibana
 
@@ -47,52 +47,80 @@ Again, if the index does *not* exist, then you will get an error that says it is
 
 ![](../images/06.png)
 
+* Create an index with more details
+  
+```text
+PUT /my-index-000001
+{
+  "settings": {
+    "index": {
+      "number_of_shards": 3,  
+      "number_of_replicas": 2 
+    }
+  }
+}
+```
+
+![](../images/08.png)
+
+
 ### STEP 2: Index one document
 
-All put requests in elastic require a content type, usually json. That means adding this to all PUT requests like this:
 
 ```bash
-
-curl -XPUT -H 'Content-type: application/json'
+PUT my-index/_doc/1
+{
+  "year": 2021,
+  "city": "Melbourne",
+  "country": "Australia",
+  "population_M": 4.936
+}
+# Index a document with _id 2
+PUT my-index/_doc/2
+{
+  "year": 2021,
+  "city": "Sydney",
+  "country": "Australia",
+  "population_M": 5.23
+}
 ```
 
-This is a bit of a hassle, so feel free to make an alias like this:
+![](../images/09.png)
+
+* List all the document that we have just indexed
 
 ```bash
-alias curl="/usr/bin/curl -H 'Content-type: application/json' "
+GET my-index/_search
 ```
 
-However, if you do make the alias, you don't want to separately postpend `-H 'Content-type: application/json'` because it will then say that you have *two* content headers, which isn't allowed. 
-Watch out for that.
+* Here are the documents back!
 
+![](../images/11.png)
+
+* But what if I do not want to generate the document ID myself?
 
 ```bash
-    curl -XPUT  -H 'Content-type: application/json' "localhost:9200/get-together/group/1 " -d '{
-    "name": "Elasticsearch Denver",
-    "organizer": "Lee"
-    }'
+POST my-index/_doc/
+{
+  "year": "2021",
+  "city": "Brisbane",
+  "country": "Australia",
+  "population_M": 2.28
+}
+POST my-index/_doc/
+{
+  "year": "2021",
+  "city": "Canberra",
+  "country": "Australia",
+  "population_M": 0.395
+}
 ```
 
+![](../images/12.png)
 
-If that doesn't work, you may have the alias set in which case you can try this:
+* Two more documents were created
 
-```bash
-    curl -XPUT  "localhost:9200/get-together/group/1 " -d '{
-    "name": "Elasticsearch Denver",
-    "organizer": "Lee"
-    }'
+### STEP 3: Create and count more documents
 
-```
+* To create more documents, use the step above, applying it a few times
 
-### STEP 3: Practice index create, list, delete
-
-    curl -XPUT 127.0.0.1:9200/new-index
-
-    curl -XDELETE 'localhost:9200/new-index'
-
-    curl -XHEAD -I 'localhost:9200/new-index'
-
-
-### STEP 4: List mapping
-
-    curl 'localhost:9200/get-together/_mapping/group?pretty'
