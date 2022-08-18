@@ -39,6 +39,38 @@ PUT stores
 ```
 ![](../images/20.png)
 
+* Add some data
+
+```text
+POST stores/_doc
+{
+   "suburb":"Carlton",
+   "product":[
+      {
+         "product":"i20 Hatch",
+         "quantity":21
+      },
+      {
+         "product":"i30 Sport",
+         "quantity":300
+      }
+   ]
+}
+POST stores/_doc
+{
+   "suburb":"Fitzroy",
+   "product":[
+      {
+         "product":"Mustang",
+         "quantity":10
+      },
+      {
+         "product":"i20 Hatch",
+         "quantity":10
+      }
+   ]
+}
+
 ![](../images/21.png)
 
 * Now, run a query to find all the stores that sell the Mustang product:

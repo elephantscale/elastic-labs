@@ -78,6 +78,9 @@ cat ./elasticsearch-8.3.3/pid
 
 ![](../images/24.png)
 
+* Gotcha: these flags are added when you start Elasticsearch once.
+
+```bash
 * Verify that elasticsearch is running
   * Open **your** URL on port 9200
 
@@ -138,15 +141,6 @@ screen
 
 * Click on the green button
 ![](../images/03.png)
-
-### If you need to restore password
-
-* In this directory `~/elasticsearch-8.3.3/bin`
-```shell
-./elasticsearch-reset-password -u elastic
-```
-
-* This will auto-generate password, and this will be your password for `elastic` user
 
 
 

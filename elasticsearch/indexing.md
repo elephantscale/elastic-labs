@@ -61,7 +61,7 @@ This is a bit of a hassle, so feel free to make an alias like this:
 alias curl="/usr/bin/curl -H 'Content-type: application/json' "
 ```
 
-However if you do make the alias, you don't want to separately postpend `-H 'Content-type: application/json'` because it will then say that you have *two* content headers, which isn't allowed.
+However, if you do make the alias, you don't want to separately postpend `-H 'Content-type: application/json'` because it will then say that you have *two* content headers, which isn't allowed.
 Watch out for that.
 
 
