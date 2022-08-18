@@ -39,5 +39,5 @@ echo "deb https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee 
 sudo apt-get update && sudo apt-get install logstash
 ```
 
-* Verify that it is installed: proceed to your [first pipeline](1-install.md).
+* Verify that it is installed: proceed to your [first pipeline](2-first-pipeline.md).
 
