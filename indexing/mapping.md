@@ -75,3 +75,115 @@ POST my-index/_doc/
 }
 ```
 
+* You might get an exception
+
+* Better, give the mapping explicitly
+
+```text
+PUT my-explicit-index
+{
+  "mappings": {
+    "properties": {
+      "year": {
+        "type": "integer"
+      },
+      "city": {
+        "type": "keyword"
+      },
+      "country": {
+        "type": "keyword"
+      },
+      "population_M":{
+        "type": "float"
+      },
+      "attractions": {
+        "type": "text"
+      }
+    }
+  }
+}
+```
+
+![](../images/16.png)
+
+* Now you can index a document with explicit mapping
+
+```text
+POST my-explicit-index/_doc
+{
+  "year": "2021",
+  "city": "Melbourne",
+  "country": "Australia",
+  "population_M": 4.936,
+  "attractions": "Queen Victoria markets, National Gallery of Victoria, Federation square"
+}
+```
+
+![](../images/17.png)
+
+* Verify that this worked
+
+```text
+{
+  "my-explicit-index": {
+    "aliases": {},
+    "mappings": {
+      "properties": {
+        "attractions": {
+          "type": "text"
+        },
+        "city": {
+          "type": "keyword"
+        },
+        "country": {
+          "type": "keyword"
+        },
+        "population_M": {
+          "type": "float"
+        },
+        "year": {
+          "type": "integer"
+        }
+      }
+    },
+    "settings": {
+      "index": {
+        "routing": {
+          "allocation": {
+            "include": {
+              "_tier_preference": "data_content"
+            }
+          }
+        },
+        "number_of_shards": "1",
+        "provided_name": "my-explicit-index",
+        "creation_date": "1660781232417",
+        "number_of_replicas": "1",
+        "uuid": "DT5pJqccQD67Q0QTT9SV5w",
+        "version": {
+          "created": "8030399"
+        }
+      }
+    }
+  }
+}
+```
+
+![](../images/18.png)
+
+* Now try a wrongly formatted year
+
+```text 
+POST my-explicit-index/_doc
+{
+  "year": "good year",
+  "city": "Melbourne",
+  "country": "Australia",
+  "population_M": 4.936,
+  "attractions": "Queen Victoria markets, National Gallery of Victoria, Federation square"
+}
+```
+
+![](../images/19.png)
+
+* This is error-checking
