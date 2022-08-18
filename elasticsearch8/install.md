@@ -58,7 +58,8 @@ cd elasticsearch-8.3.3/
 * To start as a daemon, type
 
 ```shell
-  ./elasticsearch-8.3.3/bin/elasticsearch -d -p pid
+cd elasticsearch-8.3.3/
+./bin/elasticsearch -d -p pid
 ```
 
 * For the daemon mode, verify the `pid` file content
@@ -70,6 +71,27 @@ cat ./elasticsearch-8.3.3/pid
 ```
 
 * Now you can close the terminal if you want to, and it will keep running
+
+### STEP 4.1) Open Elastic to CURL requests
+
+* Open `/home/ubuntu/elasticsearch-8.3.3/config/elasticsearch.yml` and set two security flags to `false`
+
+![](../images/24.png)
+
+* Verify that elasticsearch is running
+  * Open **your** URL on port 9200
+
+ 
+![](../images/25.png)
+
+* Verify with CURL
+```shell
+curl 'http://3.135.249.64:9200/?pretty'
+
+or 
+
+curl -XGET 'http://3.135.249.64:9200/?pretty'
+```
 
 * We will verify the install in Kibana
 

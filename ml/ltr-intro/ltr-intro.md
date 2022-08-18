@@ -25,7 +25,7 @@ You may now install the plugin:
 
 
 ```bash
-./bin/elasticsearch-plugin elastic-install \
+./bin/elasticsearch-plugin elasticsearch8 \
 http://es-learn-to-rank.labs.o19s.com/ltr-1.1.2-es7.5.1.zip
 
 ```
@@ -49,13 +49,13 @@ wget  http://es-learn-to-rank.labs.o19s.com/RankLibPlus-0.1.0.jar
 Make sure elasticsearch python library is installed
 
 ```bash
-conda elastic-install elasticsearch  #for anacconda
+conda elasticsearch8 elasticsearch  #for anacconda
 ```
 
 If that doesn't work, use pip:
 
 ```bash
-pip elastic-install elasticsearch 
+pip elasticsearch8 elasticsearch 
 ```
 
 

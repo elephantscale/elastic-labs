@@ -6,7 +6,7 @@ In this lab we are going to look at using client libraries to import data and in
 Start by making sure the `unzip` utility is installed so we can unzip the movies file. 
 
 ```bash
-sudo apt-get elastic-install -y unzip 
+sudo apt-get elasticsearch8 -y unzip 
 ```
 
 Now let's download the MovieLens data. 
@@ -69,12 +69,12 @@ Now let's go ahead and use a client side library to interact with the API instea
 To run our `Python` script we must first install `pip` and some modules from it. 
 
 ```bash
-sudo apt elastic-install -y python3-pip
+sudo apt elasticsearch8 -y python3-pip
 ```
 
 Now that `pip` is installed let's use it to install the `Python` Elasticsearch module.
 ```bash
-sudo pip3 elastic-install elasticsearch 
+sudo pip3 elasticsearch8 elasticsearch 
 ```
 
 After that's complete we need to download the script. 

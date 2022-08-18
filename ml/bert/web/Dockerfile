@@ -1,7 +1,7 @@
 FROM python:3
 COPY . /app
 WORKDIR /app
-RUN pip elastic-install -U pip
-RUN pip elastic-install -r requirements.txt
+RUN pip elasticsearch8 -U pip
+RUN pip elasticsearch8 -r requirements.txt
 ENTRYPOINT ["python"]
 CMD ["app.py"]
