@@ -56,9 +56,20 @@ sudo cp logstash-pipeline.conf /usr/share/logstash/
 ```
 
 ```bash 
-echo -e 'Hello world!' | /usr/share/logstash/bin/logstash -f logstash-pipeline.conf
+echo -e 'Hello world!' | /usr/share/logstash/bin/logstash -f logstash-pipeline.conf echo -e 'Hello world!' | /usr/share/logstash/bin/logstash -f /home/ubuntu/logstash-resources/logstash-pipeline.conf
 ```
 
 ![](../images/26.png)
+
+* Try to send two events
+
+```shell
+ echo -e 'Hello world x1 \nHello world x2' | /usr/share/logstash/bin/logstash -f /home/ubuntu/logstash-resources/logstash-pipeline.conf
+```
+
+* You should see two events in your output
+
+![](../images/27.png)
+
 
 ### STEP 3: Your first pipeline worked!
