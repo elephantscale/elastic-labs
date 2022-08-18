@@ -1,4 +1,4 @@
-# ES mapping
+# ES index templates
 
 In this lab we will practice index mapping
 
