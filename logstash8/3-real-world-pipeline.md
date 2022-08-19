@@ -16,3 +16,50 @@ java -version
 ```
 
 ### STEP 2: Create a new logstash-pipeline.conf
+
+* Set the following in `logstash-taxi.conf` in the following directory:
+
+```text
+/home/ubuntu/Getting-Started-with-Elastic-Stack-8.0/Chapter7/processing-csv-files/
+```
+* Point to the right file
+
+```text
+input {
+    file {
+                path => "/home/ubuntu/Getting-Started-with-Elastic-Stack-8.0/Chapter7/processing-csv-files/chicago-taxi-data.csv"
+                start_position => "beginning"
+                sincedb_clean_after => "1 s"
+        }
+}
+```
+
+* Adjust the output
+
+```text
+output {
+    stdout {}
+    elasticsearch {
+        # configure the Elasticsearch output plugin parameters with your cluster details
+        hosts => "http://localhost:9200"
+        user => "elastic"
+        password =>""
+    }
+}
+
+```
+### STEP 3: Run logstash
+
+```bash
+ /usr/share/logstash/bin/logstash -f /home/ubuntu/Getting-Started-with-Elastic-Stack-8.0/Chapter7/processing-csv-files/logstash-taxi.conf 
+```
+
+* Observe the events
+
+![](../images/29.png)
+
+* See the new index and 1000 records in it
+
+![](../images/30.png)
+
+
