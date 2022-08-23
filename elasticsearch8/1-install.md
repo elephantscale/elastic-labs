@@ -115,7 +115,7 @@ tar xf kibana-8.3.3-linux-x86_64.tar.gz
 server.host: "0.0.0.0"
 ```
 
-* You will need a token from Elastic. Here is how you get it
+* **If** you are running in a secure mode (which we are not right now), you will need a token from Elastic. Here is how you get it
 ```shell
 cd
 cd elasticsearch-8.3.3/
