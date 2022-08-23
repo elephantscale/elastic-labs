@@ -89,6 +89,10 @@ cat ./elasticsearch-8.3.3/pid
 
 * Verify with CURL
 ```shell
+curl 'http://0.0.0.0:9200/?pretty'
+
+or
+
 curl 'http://3.135.249.64:9200/?pretty'
 
 or 
