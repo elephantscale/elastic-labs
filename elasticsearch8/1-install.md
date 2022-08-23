@@ -62,7 +62,7 @@ cd elasticsearch-8.3.3/
 ./bin/elasticsearch -d -p pid
 ```
 
-* For the daemon mode, verify the `pid` file content
+* To illustrate, for the daemon mode, verify the `pid` file content
 
 ```shell
 find . -name pid
