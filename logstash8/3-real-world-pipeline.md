@@ -16,8 +16,10 @@ java -version
 ```
 
 ### STEP 2: Create a new logstash-pipeline.conf
+
+
 * Clone some data
-```shell```
+```shell
 git clone https://github.com/elephantscale/Getting-Started-with-Elastic-Stack-8.0.git
 ```
 
