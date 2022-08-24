@@ -5,7 +5,7 @@ In this lab we will Kibana capabilities.
 Lab Goals: Practicing Kibana capabilities
 
 
-* Let us overview what Kibana capabilities are, using provided data sets
+* Let us have an overview of what Kibana capabilities are, using provided data sets
 
 ![](../images/32.png)
 ![](../images/33.png)
