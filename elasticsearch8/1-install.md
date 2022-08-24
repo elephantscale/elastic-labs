@@ -62,7 +62,7 @@ cd elasticsearch-8.3.3/
 ./bin/elasticsearch -d -p pid
 ```
 
-* For the daemon mode, verify the `pid` file content
+* To illustrate, for the daemon mode, verify the `pid` file content
 
 ```shell
 find . -name pid
@@ -89,6 +89,10 @@ cat ./elasticsearch-8.3.3/pid
 
 * Verify with CURL
 ```shell
+curl 'http://0.0.0.0:9200/?pretty'
+
+or
+
 curl 'http://3.135.249.64:9200/?pretty'
 
 or 
@@ -111,7 +115,7 @@ tar xf kibana-8.3.3-linux-x86_64.tar.gz
 server.host: "0.0.0.0"
 ```
 
-* You will need a token from Elastic. Here is how you get it
+* **If** you are running in a secure mode (which we are not right now), you will need a token from Elastic. Here is how you get it
 ```shell
 cd
 cd elasticsearch-8.3.3/
