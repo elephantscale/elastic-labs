@@ -105,6 +105,7 @@ curl -XGET 'http://3.135.249.64:9200/?pretty'
 ### STEP 5) Install Kibana
 
 ```shell
+cd
 wget https://artifacts.elastic.co/downloads/kibana/kibana-8.3.3-linux-x86_64.tar.gz
 tar xf kibana-8.3.3-linux-x86_64.tar.gz
 ```
