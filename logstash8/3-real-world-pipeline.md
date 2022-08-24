@@ -58,7 +58,7 @@ output {
 ### STEP 3: Run logstash
 
 ```bash
- /usr/share/logstash/bin/logstash -f /home/ubuntu/Getting-Started-with-Elastic-Stack-8.0/Chapter7/processing-csv-files/logstash-taxi.conf 
+sudo /usr/share/logstash/bin/logstash -f /home/ubuntu/Getting-Started-with-Elastic-Stack-8.0/Chapter7/processing-csv-files/logstash-taxi.conf 
 ```
 
 * Observe the events
