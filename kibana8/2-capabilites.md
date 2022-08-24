@@ -22,57 +22,58 @@ Lab Goals: Practicing Kibana capabilities
 
 ![](../images/34.png)
 
-* You see three different sample data sets. Let us chose the sample web logs.
-
+* You see three different sample data sets. Let us chose the sample web logs. That is because Kibana comes with pre-build visualizations and dashboards.
+* While the web logs are loading, we can look around. But it won't be long.
 
 ![](../images/35.png)
 
-* You see three different sample data sets
+* When you click on "View Data", you can choose different ways of investigation.
 
 
 ![](../images/36.png)
 
-* You see three different sample data sets
+* While it is loading, you can look around.
 
 
 ![](../images/37.png)
 
-* You see three different sample data sets
+* Here are different ways of investigation.
 
 
 ![](../images/38.png)
 
-* You see three different sample data sets
+* Chose "Discover"
 
 
 ![](../images/39.png)
 
-* You see three different sample data sets
+* Here is data discovery display
 
 
 ![](../images/40.png)
 
-* You see three different sample data sets
+* You can look at different data fields
 
 
 ![](../images/41.png)
 
-* You see three different sample data sets
+* Each field will show more information about itself.
 
 
 ![](../images/42.png)
 
-* You see three different sample data sets
+* If you click on one of these, you will a popout with top five values. For some, we have less than five.
 
 
 ![](../images/43.png)
 
-* You see three different sample data sets
+* In the center, you have the chart of the data, with each individual log entry being a document.
+* Expand a document and watch an additional screen pop up.
 
 
 ![](../images/44.png)
 
-* You see three different sample data sets
+* While inspecting a document, you can click on the "JSON" button to see the raw JSON.
 
 
 ![](../images/45.png)
