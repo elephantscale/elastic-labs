@@ -130,3 +130,7 @@ cd freeeed_complete_pack/
 * Create a query for every one of the help items. You will have a total of 6 queries.
 
 ### Congratulations!
+
+### Total bonus
+
+* Download your favorite dataset and process it in FreeEed.
