@@ -44,7 +44,10 @@ sudo apt install pst-util -y
 ### STEP 2: Continue in the VM user Desktop interface.
 
 * Open a terminal
+
 ![](../images/120.png)
+
+
 ![](../images/121.png)
 
 * In this terminal, type:
@@ -58,39 +61,72 @@ cd freeeed_complete_pack/
 ![](../images/122.png)
 
 * Click "OK" to close the dialog.
+
 ![](../images/123.png)
+
 * Open File-Projects
 ![](../images/124.png)
+
 * You will see the main window with an included project. Click on "Select" to select this project.
+
 ![](../images/125.png)
+
 * Click "Edit" - "Project options"
+
 ![](../images/126.png)
-* 
+
+
 ![](../images/127.png)
+
 * In the "Project options" dialog, select the "Search" tab.
+
 ![](../images/128.png)
+
 * Chose "Prepare SOLR search" and click "OK".
+
 ![](../images/129.png)
+
 * Click "Process" - "Stage"
+
 ![](../images/130.png)
-* Watch it Stage, then click "OK" to close the dialog.
+
+* Watch it stage, then click "OK" to close the dialog.
+
 ![](../images/131.png)
+
 * Click "Process" - "Process locally". This will take a while. While, processing, it is sending data to the search engine.
 * Watch it process locally, then click "OK" to close the dialog. Keep watching until the message in the log window stop.
+
 ![](../images/132.png)
+
 * Now chose "Review" - "Go to review"
+
 ![](../images/133.png)
+
 * You will see a browser window with the search engine. Log in with "admin" and "admin".
+
 ![](../images/135.png)
-* Click "Search". You will see the search window. 
+
+* Click "Search". You will see the search window.
+
 ![](../images/136.png)
+
 * Search in case "1".
+
 ![](../images/137.png)
+
 ### STEP 3: Experiment with search
+
+
 * Search start "*" brings back all documents
 * Search on a keyword brings back all documents that contain the keyword
+
 ![](../images/138.png)
+
 * Click on "Click here for help with search queries". You will be taken to a help page.
+
 ![](../images/139.png)
-* Create queries for every one of the help items.
+
+* Create a query for every one of the help items. You will have a total of 6 queries.
+
 ### Congratulations!
