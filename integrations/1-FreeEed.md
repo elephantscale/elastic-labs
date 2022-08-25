@@ -123,7 +123,7 @@ cd freeeed_complete_pack/
 ### STEP 3: Experiment with search
 
 
-* Search start "*" brings back all documents
+* Search star "*" brings back all documents
 * Search on a keyword brings back all documents that contain the keyword
 
 ![](../images/138.png)
