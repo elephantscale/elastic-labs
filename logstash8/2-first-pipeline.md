@@ -56,7 +56,7 @@ sudo cp logstash-pipeline.conf /usr/share/logstash/
 ```
 
 ```bash 
-echo -e 'Hello world!' | /usr/share/logstash/bin/logstash -f logstash-pipeline.conf echo -e 'Hello world!' | /usr/share/logstash/bin/logstash -f /home/ubuntu/logstash-resources/logstash-pipeline.conf
+echo -e 'Hello world!' | sudo /usr/share/logstash/bin/logstash -f logstash-pipeline.conf 
 ```
 
 ![](../images/26.png)

@@ -105,6 +105,7 @@ curl -XGET 'http://3.135.249.64:9200/?pretty'
 ### STEP 5) Install Kibana
 
 ```shell
+cd
 wget https://artifacts.elastic.co/downloads/kibana/kibana-8.3.3-linux-x86_64.tar.gz
 tar xf kibana-8.3.3-linux-x86_64.tar.gz
 ```
@@ -131,12 +132,12 @@ screen
 * Use one of the two commands below
 
 ```shell
-./kibana-8.3.3/bin/kibana 
-./kibana-8.3.3/bin/kibana &
+./bin/kibana 
+./bin/kibana &
 ```
 
 * Open the Kibana UI and verify the installation
-* In the browser, open http://<your-url>:5601
+* In the browser, open http://your-url:5601
 * Go to DevTools-Console
 ![](../images/01.png)
 

@@ -17,6 +17,13 @@ java -version
 
 ### STEP 2: Create a new logstash-pipeline.conf
 
+
+* Clone some data
+```shell
+git clone https://github.com/elephantscale/Getting-Started-with-Elastic-Stack-8.0.git
+```
+
+
 * Set the following in `logstash-taxi.conf` in the following directory:
 
 ```text
@@ -51,7 +58,7 @@ output {
 ### STEP 3: Run logstash
 
 ```bash
- /usr/share/logstash/bin/logstash -f /home/ubuntu/Getting-Started-with-Elastic-Stack-8.0/Chapter7/processing-csv-files/logstash-taxi.conf 
+sudo /usr/share/logstash/bin/logstash -f /home/ubuntu/Getting-Started-with-Elastic-Stack-8.0/Chapter7/processing-csv-files/logstash-taxi.conf 
 ```
 
 * Observe the events
