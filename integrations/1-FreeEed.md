@@ -43,7 +43,7 @@ sudo apt-get update; sudo apt-get install -y java-11-amazon-corretto-jdk
 * Stuff needed by the app
 
 ```bash
-sudo apt install pst-util -y
+sudo apt install pst-utils -y
 ```
 
 ### STEP 2: Continue in the VM user Desktop interface.
