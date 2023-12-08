@@ -83,20 +83,24 @@ cat ./elasticsearch-8.3.3/pid
 ```bash
 * Verify that elasticsearch is running
   * Open **your** URL on port 9200
-
+```
  
 ![](../images/25.png)
 
 * Verify with CURL
 ```shell
 curl 'http://0.0.0.0:9200/?pretty'
+```
 
 or
 
+```bash
 curl 'http://3.135.249.64:9200/?pretty'
+```
 
 or 
 
+```bash
 curl -XGET 'http://3.135.249.64:9200/?pretty'
 ```
 
