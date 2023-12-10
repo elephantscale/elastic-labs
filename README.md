@@ -52,3 +52,5 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * [Mapping](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/2-indexing.md)
 * [Mapping-nested](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/4-mapping-nested.md)
 * [Joins](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/5-joins-todo-TODO.md) - demo (todo)
+* {Index templates](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/6-index-templates-TODO.md)
+* 
