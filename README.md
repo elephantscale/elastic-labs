@@ -43,3 +43,4 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 ## Suggested lab order
 
 * Inverted index
+* [Luke](https://github.com/elephantscale/elastic-labs/tree/master/luke)
