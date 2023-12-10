@@ -55,8 +55,11 @@ Be ready to explain what the `index` directory contains.
 
 ```
 
-You'll be prompted for a query. Type in a gibberish or made up word
+* You'll be prompted for a query. Type in a gibberish or made-up word
 (for example: "supercalifragilisticexpialidocious").
-You'll see that there are no matching results in the lucene source code.
-Now try entering the word "string". That should return a whole bunch of documents.
-The results will page at every tenth result and ask you whether you want more results.
+You'll see that there are no matching results in the Lucene source code.
+
+* Now search for `man`
+* `q`
+* Search anew for each term
+* Find more ways to use Lucene
