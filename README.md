@@ -45,4 +45,4 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * [Inverted index](https://github.com/elephantscale/elastic-labs/tree/master/inverted-index)
 * [Lucene](https://github.com/elephantscale/elastic-labs/blob/master/lucene/lucene.md)
 * [Luke](https://github.com/elephantscale/elastic-labs/tree/master/luke)
-* [Lucene API](https://github.com/elephantscale/elastic-labs/tree/master/luceneapi)
+* [Lucene API](https://github.com/elephantscale/elastic-labs/tree/master/luceneapi) - demo only
