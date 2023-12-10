@@ -61,4 +61,4 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * [Logstash parsing syslog](https://github.com/elephantscale/elastic-labs/blob/master/logstash8/4-parsing-syslog.md)
 * [Learn to rank](https://github.com/elephantscale/elastic-labs/tree/master/ml/ltr-intro)
 * [Elastic meets BERT](https://github.com/elephantscale/elastic-labs/tree/master/ml/bert)
-* 
+* [Elastic with Spark](https://github.com/elephantscale/elastic-labs/blob/master/spark-elastic/intro.md)
