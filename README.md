@@ -54,3 +54,4 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * [Joins](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/5-joins-todo-TODO.md) - demo (todo)
 * [Index templates](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/6-index-templates-TODO.md)
 * [Movielens](https://github.com/elephantscale/elastic-labs/tree/master/movielens)
+* [Kibana](https://github.com/elephantscale/elastic-labs/tree/master/kibana8)
