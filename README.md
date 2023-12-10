@@ -19,7 +19,7 @@ The instructor will provide a server with SSH access
 Login with the credentials provided by the instructor
 
 
-Nothing is needed, instructor will provide the link 
+Nothing is needed, the instructor will provide the link. 
 
 ### STEP 4) To view the labs locally
 
@@ -47,7 +47,7 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * [Lucene](https://github.com/elephantscale/elastic-labs/blob/master/lucene/lucene.md)
 * [Luke](https://github.com/elephantscale/elastic-labs/tree/master/luke)
 * [Lucene API](https://github.com/elephantscale/elastic-labs/tree/master/luceneapi) - demo only
-* [Install Elasticsearch](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/1-install.md) - demo -only
+* [Install Elasticsearch](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/1-install.md) - demo - only
 * [Indexing](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/2-indexing.md)
 * [Mapping](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/2-indexing.md)
 * [Mapping-nested](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/4-mapping-nested.md)
