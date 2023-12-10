@@ -55,3 +55,10 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * [Index templates](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/6-index-templates-TODO.md)
 * [Movielens](https://github.com/elephantscale/elastic-labs/tree/master/movielens)
 * [Kibana](https://github.com/elephantscale/elastic-labs/tree/master/kibana8)
+* [Logstash install](https://github.com/elephantscale/elastic-labs/blob/master/logstash8/1-install.md)
+* [Logstash first pipeline](https://github.com/elephantscale/elastic-labs/blob/master/logstash8/2-first-pipeline.md)
+* [Logstash real-world pipeline](https://github.com/elephantscale/elastic-labs/blob/master/logstash8/3-real-world-pipeline.md)
+* [Logstash parsing syslog](https://github.com/elephantscale/elastic-labs/blob/master/logstash8/4-parsing-syslog.md)
+* [Learn to rank](https://github.com/elephantscale/elastic-labs/tree/master/ml/ltr-intro)
+* [Elastic meets BERT](https://github.com/elephantscale/elastic-labs/tree/master/ml/bert)
+* 
