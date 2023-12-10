@@ -47,3 +47,8 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * [Lucene](https://github.com/elephantscale/elastic-labs/blob/master/lucene/lucene.md)
 * [Luke](https://github.com/elephantscale/elastic-labs/tree/master/luke)
 * [Lucene API](https://github.com/elephantscale/elastic-labs/tree/master/luceneapi) - demo only
+* [Install Elasticsearch](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/1-install.md) - demo -only
+* [Indexing](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/2-indexing.md)
+* [Mapping](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/2-indexing.md)
+* [Mapping-nested](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/4-mapping-nested.md)
+* [Joins](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/5-joins-todo-TODO.md) - demo (todo)
