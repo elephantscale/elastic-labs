@@ -42,6 +42,6 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 
 ## Suggested lab order
 
-* Inverted index
+* [Inverted index](https://github.com/elephantscale/elastic-labs/tree/master/inverted-index)
 * [Lucene](https://github.com/elephantscale/elastic-labs/blob/master/lucene/lucene.md)
 * [Luke](https://github.com/elephantscale/elastic-labs/tree/master/luke)
