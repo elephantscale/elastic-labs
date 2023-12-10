@@ -39,3 +39,7 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * For Windows: [Sublime](http://www.sublimetext.com/), [NodePad++](http://notepad-plus-plus.org/), [Textpad](http://www.textpad.com/)
 * For Mac: [Sublime](http://www.sublimetext.com/),  [TextWrangler](http://www.barebones.com/products/textwrangler/)
 * For Linux: [Sublime](http://www.sublimetext.com/), GEdit, Vim
+
+## Suggested lab order
+
+* Inverted index
