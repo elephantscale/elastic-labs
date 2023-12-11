@@ -25,18 +25,21 @@ Your lab server will provide this with VNC (ask the instructor about it)
     
 In Luke, open the `index` file    
 
-### STEP 3: Luke basic functionality
+### Attention
+* If you have trouble opening the Luke application with the files, examine its functionality on this page
+* [Luke functionality](http://www.getopt.org/luke/)
+### STEP 3: Luke's basic functionality
 
-Familiarize yourself with Luke tabs
+Familiarize yourself with Luke's tabs.
 
-Be ready to answer the following questions about Luke
+Be ready to answer the following questions about Luke.
 
 - what documents do you see?
 - can you browse through documents?
 - can you search?
 
-### STEP 4: Luke functionality overview
+### STEP 4: Luke's functionality overview
 
-- Prepare a general list of Luke functionalities
+- Prepare a general list of Luke's functionalities
 - Count various aspects that Luke provides
 - See if you can find more than the other students
