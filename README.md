@@ -45,7 +45,7 @@ We recommend using a 'programmer's editor to view these files. These editors hav
 * [Inverted index](https://github.com/elephantscale/elastic-labs/tree/master/inverted-index)
 * [Precision-Recall](https://github.com/elephantscale/elastic-labs/tree/master/precision-recall)
 * [Lucene](https://github.com/elephantscale/elastic-labs/blob/master/lucene/lucene.md)
-* [Luke](https://github.com/elephantscale/elastic-labs/tree/master/luke)
+* [Luke](https://github.com/elephantscale/elastic-labs/blob/master/lucene/luke.md)
 * [Lucene API](https://github.com/elephantscale/elastic-labs/tree/master/luceneapi) - demo only
 * [Install Elasticsearch](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/1-install.md) - demo - only
 * [Indexing](https://github.com/elephantscale/elastic-labs/blob/master/elasticsearch8/2-indexing.md)
