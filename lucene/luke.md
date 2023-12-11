@@ -1,14 +1,15 @@
 ## Luke for Lucene 
+* Works best as a demo
 
-In this lab we will use a tool called Luke, in order to analyze Lucene index.
+In this lab, we will use a tool called Luke to analyze the Lucene index.
 
-#### Note 1: This lab depends in the `index` folder created in the `lucene.md` lab
+#### Note 1: This lab depends on the `index` folder created in the `lucene.md` lab
 Lab Goals:
 
 1. Install Luke
-1. Explore Luke functionality 
+1. Explore Luke's functionality 
       
-#### Note 2: For this lab you will need the Desktop UI. 
+#### Note 2: For this lab, you will need the Desktop UI. 
 
 Your lab server will provide this with VNC (ask the instructor about it)
       
