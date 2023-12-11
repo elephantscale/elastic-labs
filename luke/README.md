@@ -1,5 +1,7 @@
 ## Luke for Lucene 
 
+Note: the current version of Luke lab is [here](https://github.com/elephantscale/elastic-labs/blob/master/lucene/luke.md)
+
 In this lab we will use a tool called Luke, in order to analyze Lucene index.
 
 
