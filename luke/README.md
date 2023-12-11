@@ -29,15 +29,7 @@ mv luke-swing-7.6.0.1 luke
 export LUKE_PATH=`pwd`/luke
 ```
 
-Copy the index from your Solr install
-
-For example: 
-
-```bash
-cp -r ~/solr/example/cloud/node2/solr/techproducts_shard1_replica_n1/data/index .
-```
-
-
+Use the index that  you created in the previous lab.
 
 ### STEP 3) Run Luke and open the index
 
