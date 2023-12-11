@@ -24,7 +24,7 @@ Your lab server will provide this with VNC (ask the instructor about it)
     cd luke-7.1.0
     ./luke.sh
     
-In Luke, open the `index` file    
+In Luke, open the `index` file that you created in the previous lab.
 
 ### Attention
 * If you have trouble opening the Luke application with the files, examine its functionality on this page
