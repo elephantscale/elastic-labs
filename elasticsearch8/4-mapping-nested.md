@@ -71,7 +71,7 @@ POST stores/_doc
       }
    ]
 }
-
+```
 ![](../images/21.png)
 
 * Now, run a query to find all the stores that sell the Mustang product:
