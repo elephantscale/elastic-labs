@@ -98,6 +98,7 @@ GET stores/_search
 ![](../images/22.png)
 
 * Now, to return all the stores with less than 50 units of i30 Sport, run the following code:
+  
 ```text
 GET stores/_search
 {
