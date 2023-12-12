@@ -37,6 +37,7 @@ PUT stores
    }
 }
 ```
+
 ![](../images/20.png)
 
 * Add some data
